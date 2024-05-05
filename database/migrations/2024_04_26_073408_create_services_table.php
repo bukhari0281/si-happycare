@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->longText('description');
+
+            $table->foreignId("health_destination_id")->constrained("health_destinations")->default(null);
+            $table->foreignId("tourist_destination_id")->constrained("tourist_destinations")->default(null);
 
             $table->softDeletes();
             $table->timestamps();
