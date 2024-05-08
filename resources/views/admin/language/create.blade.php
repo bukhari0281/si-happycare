@@ -42,11 +42,20 @@
                                  <label for="name">Bahasa apa yang yang digunakan</label>
                              </div>
                              <div class="col-md-8 form-group">
-                                 <input type="text" id="name" class="form-control" name="name"
-                                     placeholder="Nama Tempat">
+                                 {{-- <input type="text" id="name" class="form-control" name="name" placeholder="Nama Tempat"> --}}
+                                     <ul class="list-unstyled mb-0">
+                                        <li class="d-inline-block me-2 mb-1">
+                                            <div class="form-check">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="checkbox1" name="name[]" value="English" class="form-check-input">
+                                                    <label for="checkbox1">English</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                              </div>
                              <div class="col-md-4">
-                                 <label for="health_destination_id">Kategori Faskes</label>
+                                 <label for="health_destination_id">Faskes?</label>
                              </div>
                              <div class="col-md-8 form-group">
                                  <select class="form-control" id="health_destination_id"  name="health_destination_id" >
@@ -57,7 +66,7 @@
                                  </select>
                              </div>
                              <div class="col-md-4">
-                                 <label for="tourist_destination_id">Kategori Wisata</label>
+                                 <label for="tourist_destination_id">Wisata?</label>
                              </div>
                              <div class="col-md-8 form-group">
                                  <select class="form-control" id="tourist_destination_id"  name="tourist_destination_id" >

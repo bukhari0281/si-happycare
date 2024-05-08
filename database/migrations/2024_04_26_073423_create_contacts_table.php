@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string("phone");
 
             $table->foreignId("city_id")->constrained("cities");
-            $table->foreignId("health_destination_id")->constrained("health_destinations")->default(null);
-            $table->foreignId("tourist_destination_id")->constrained("tourist_destinations")->default(null);
+            $table->foreignId("health_destination_id")->constrained("health_destinations")->nullable();
+            $table->foreignId("tourist_destination_id")->constrained("tourist_destinations")->nullable();
 
             $table->softDeletes();
             $table->timestamps();

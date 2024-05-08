@@ -13,27 +13,27 @@ class LanguageSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('languages')->insert([
+        DB::table('bahasas')->insert([
             'name' => 'English',
         ]);
 
-        DB::table('languages')->insert([
+        DB::table('bahasas')->insert([
             'name' => 'Romanian',
         ]);
 
-        DB::table('languages')->insert([
+        DB::table('bahasas')->insert([
             'name' => 'French',
         ]);
 
-        DB::table('languages')->insert([
+        DB::table('bahasas')->insert([
             'name' => 'Italian',
         ]);
 
-        DB::table('languages')->insert([
+        DB::table('bahasas')->insert([
             'name' => 'Spanish',
         ]);
 
-        DB::table('languages')->insert([
+        DB::table('bahasas')->insert([
             'name' => 'German',
         ]);
 

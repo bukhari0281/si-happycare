@@ -35,9 +35,9 @@
 
                                 <tr>
                                     <th>No.</th>
+                                    <th>Layanan</th>
                                     <th>Faskes</th>
                                     <th>Wisata</th>
-                                    <th>Layanan</th>
                                     <th>Deskripsi</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -50,6 +50,7 @@
                                         <td>{{ $i }}</td>
                                         {{-- <td>{{ $alt->healthDestination->name }}</td>
                                         <td>{{ $alt->touristDestination->name }}</td> --}}
+                                        <td>{{ $alt->name }}</td>
                                         @if ($alt->healthDestination )
                                             <td>{{ $alt->healthDestination->name }}</td>
                                         @endif
@@ -57,10 +58,9 @@
                                             <td>{{ $alt->touristDestination->name }}</td>
                                         @endif --}}
                                         <td>{{ $alt->name }}</td>
-                                        <td>{{ $alt->name }}</td>
                                         <td>{{ $alt->description }}</td>
                                         <td>
-                                                <button data-bs-toggle="modal" data-bs-target="#editLayananModal{{ $alt->id }}" class="btn btn-secondary block">Edit</button>
+                                                <a href="{{ url("layanan/$alt->id/edit") }}" class="btn btn-secondary block">Edit</a>
                                                 <button data-bs-toggle="modal" data-bs-target="#deleteLayananModal{{ $alt->id }}" class="btn btn-danger block">Hapus</button>
                                         </td>
                                     </tr>
@@ -80,7 +80,6 @@
         </div>
     </section>
 </div>
-@include('admin.layanan.edit')
 @include('admin.layanan.delete')
 @endsection
 

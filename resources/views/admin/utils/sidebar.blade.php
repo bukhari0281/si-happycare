@@ -117,8 +117,7 @@
 
                 <li class="sidebar-title">Data</li>
 
-                <li
-                    class="sidebar-item  has-sub">
+                <li class="sidebar-item  has-sub">
                     <a href="{{ url('form-utama') }}" class='sidebar-link'>
                         <i class="bi bi-hexagon-fill"></i>
                         <span>Health Destination</span>
@@ -135,26 +134,56 @@
                     </ul>
                 </li>
 
-                <li
-                    class="sidebar-item  ">
+                <li class="sidebar-item  has-sub">
+                    <a href="{{ url('tourist-destination') }}" class='sidebar-link'>
+                        <i class="bi bi-hexagon-fill"></i>
+                        <span>Tourist Destination</span>
+                    </a>
+                    <ul class="submenu ">
+
+                        <li class="submenu-item  ">
+                            <a href="{{ url('tourist-destination') }}" class="submenu-link">Daftar Tempat</a>
+                        </li>
+                        <li class="submenu-item  ">
+                            <a href="{{ url('tourist-destination/create') }}" class="submenu-link">Tambah</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="sidebar-item has-sub ">
                     <a href="form-layout.html" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Kontak</span>
                     </a>
-
-
+                    <ul class="submenu ">
+                        <li class="submenu-item  ">
+                            <a href="{{ url('kontak') }}" class="submenu-link">Daftar Kontak</a>
+                        </li>
+                        <li class="submenu-item  ">
+                            <a href="{{ url('kontak/create') }}" class="submenu-link">Tambah</a>
+                        </li>
+                    </ul>
                 </li>
 
-                <li
-                    class="sidebar-item">
+                <li class="sidebar-item has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-journal-check"></i>
                         <span>Fasilitas</span>
                     </a>
+                    <ul class="submenu ">
+
+                        <li class="submenu-item  ">
+                            <a href="{{ url('fasilitas') }}" class="submenu-link">Daftar Fasilitas</a>
+                        </li>
+                        <li class="submenu-item  ">
+                            <a href="{{ url('fasilitas/create') }}" class="submenu-link">Tambah</a>
+                        </li>
+
+                    </ul>
                 </li>
 
-                <li
-                    class="sidebar-item has-sub">
+                <li class="sidebar-item has-sub">
                     <a href="{{ url('layanan') }}" class='sidebar-link'>
                         <i class="bi bi-activity"></i>
                         <span>Layanan</span>
@@ -171,16 +200,24 @@
                     </ul>
                 </li>
 
-                <li
-                    class="sidebar-item">
+                <li class="sidebar-item has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-journal-check"></i>
                         <span>Kategori</span>
                     </a>
+                    <ul class="submenu ">
+
+                        <li class="submenu-item  ">
+                            <a href="{{ url('jenis/faskes') }}" class="submenu-link">Daftar Kategori Faskes</a>
+                        </li>
+                        <li class="submenu-item  ">
+                            <a href="{{ url('jenis/wisata') }}" class="submenu-link">Daftar Kategori Wisata</a>
+                        </li>
+
+                    </ul>
                 </li>
 
-                <li
-                    class="sidebar-item has-sub">
+                <li class="sidebar-item has-sub">
                     <a href="{{ url('bahasa') }}" class='sidebar-link'>
                         <i class="bi bi-file-font-fill"></i>
                         <span>Bahasa</span>

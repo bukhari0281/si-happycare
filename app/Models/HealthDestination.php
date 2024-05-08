@@ -17,9 +17,9 @@ class HealthDestination extends Model
     {
         return $this->belongsTo(FaskesKategori::class);
     }
-    public function Language()
+    public function bahasa()
     {
-        return $this->hasMany(Language::class);
+        return $this->belongsToMany(Bahasa::class, 'bahasa_tourist_health_destination', 'health_destination_id', 'bahasa_id');
     }
     public function Layanan()
     {

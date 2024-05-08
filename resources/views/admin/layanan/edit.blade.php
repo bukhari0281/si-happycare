@@ -1,37 +1,92 @@
-@foreach ($items as $item)
-<!-- Vertically Centered modal Modal -->
-<div class="modal fade" id="editLayananModal{{ $item->id }}" tabindex="-1" role="dialog"
-aria-labelledby="editLayananModalTitle" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
-    role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="editLayananModalTitle">Ubah Layanan
-            </h5>
-            <button type="button" class="close" data-bs-dismiss="modal"
-                aria-label="Close">
-                <i data-feather="x"></i>
-            </button>
+@extends('admin.utils.layout')
+@section('content')
+<div class="page-title">
+    <div class="row">
+        <div class="col-12 col-md-6 order-md-1 order-last">
+            <h3>Form Edit Data</h3>
         </div>
-        <div class="modal-body">
-          <form action="{{ url('layanan/'.$item->id) }}" method="POST">
-            @method('PUT')
-            @csrf
-            <label for="name">Layanan</label>
-            <input type="text" class="form-control mb-5" aria-describedby="helpId" name="name" id="name" placeholder="Layanan" value="{{ old('name',$item->name) }}">
-            <button type="button" class="btn btn-light-secondary"
-                data-bs-dismiss="modal">
-                <i class="bx bx-x d-block d-sm-none"></i>
-                <span class="d-none d-sm-block">Tutup</span>
-            </button>
-            <button type="submit" class="btn btn-primary ms-1" data-bs-dismiss="modal">
-                <i class="bx bx-check d-block d-sm-none"></i>
-                <span class="d-none d-sm-block">Ubah</span>
-            </button>
-          </form>
+        <div class="col-12 col-md-6 order-md-2 order-first">
+            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url('layanan') }}">Layanan</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Form Layout</li>
+                </ol>
+            </nav>
         </div>
     </div>
 </div>
-</div>
+ <!-- Basic Horizontal form layout section start -->
 
-@endforeach
+ <section id="basic-horizontal-layouts">
+     <div class="card">
+         <div class="card-header">
+             <h4 class="card-title">Edit Data Layanan</h4>
+             @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+         </div>
+         <div class="card-content">
+             <div class="card-body">
+                 <form action="{{ url('layanan/'.$items->id) }}" method="POST" class="form form-horizontal" enctype="multipart/form-data">
+                    @method('PUT')
+                    @csrf
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="name">Layanan</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="text" class="form-control" id="name" name="name" value="{{ $items->name }}">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="description">Deskripsi</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <textarea type="text" class="form-control" id="description" name="description" rows="7" >{{ old('description', $items->description) }}</textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="health_destination_id">Faskes?</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <select class="form-control" id="health_destination_id"  name="health_destination_id" >
+                                    @foreach ($healthDestination as $hd)
+                                    @if($hd->id == $items->health_destination_id)
+                                        <option value="{{ $hd->id }}" selected>{{ $hd->name }}</option>
+                                    @endif
+                                        <option value="{{ $hd->id }}">{{ $hd->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="tourist_destination_id">Wisata?</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <select class="form-control" id="tourist_destination_id"  name="tourist_destination_id" >
+                                    @foreach ($touristDestination as $td)
+                                    @if($td->id == $items->tourist_destination_id)
+                                        <option value="{{ $td->id }}" selected>{{ $td->name }}</option>
+                                    @endif
+                                        <option value="{{ $td->id }}">{{ $td->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-sm-12 d-flex justify-content-end mt-4">
+                                <button type="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
+                                <button type="reset"
+                                    class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                 </form>
+             </div>
+         </div>
+     </div>
+
+</section>
+@endsection

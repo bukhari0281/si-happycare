@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\HealthDestinasionRequest;
+use App\Models\Bahasa;
 use App\Models\FaskesKategori;
 use App\Models\HealthDestination;
 use App\Models\Language;
@@ -16,7 +17,7 @@ class HealthDestinationController extends Controller
      */
     public function index()
     {
-        $items = HealthDestination::with('faskesKategori', 'Language', 'Layanan')->latest()->get();
+        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan')->latest()->get();
 
         return view('admin.healthDestination.index', compact('items'));
     }
@@ -27,33 +28,23 @@ class HealthDestinationController extends Controller
     public function create()
     {
         $faskesKategori = FaskesKategori::get();
+        $bahasa = Bahasa::orderBy('name', 'asc')->get()->pluck('name', 'id');
 
-        return view('admin.healthDestination.create', compact('faskesKategori'));
+        return view('admin.healthDestination.create', compact('faskesKategori', 'bahasa'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(HealthDestinasionRequest $request)
     {
-        $request->validate(
-            [
-                'name' => 'required',
-                'description' => 'required',
-                'faskes_kategori_id' => 'required',
+        $destinasi = new HealthDestination;
+        $destinasi->name = $request->name;
+        $destinasi->description = $request->description;
+        $destinasi->faskes_kategori_id = $request->faskes_kategori_id;
+        $destinasi->save();
 
-            ],[
-                'name.required' => 'Nama layanan wajib diisi',
-                'description.required' => 'Deskripsi layanan wajib diisi',
-                'faskes_kategori_id.required' => 'Kategori layanan wajib diisi',
-            ]
-        );
-
-        $items = [
-            'name'=>$request->name,
-            'description'=>$request->description,
-            'faskes_kategori_id'=>$request->faskes_kategori_id,
-        ];
+        // Menyinkronkan bahasa_id dengan tabel pivot
 
         // // Insert Img
         // $file = $request->file('img'); // img
@@ -62,7 +53,8 @@ class HealthDestinationController extends Controller
 
         // $data['img'] = $fileName;
 
-        HealthDestination::create($items);
+        // Menyinkronkan bahasa_id dengan tabel pivot
+        $destinasi->bahasa()->sync($request->bahasa_id);
 
         // return dd($items);
         return redirect(url('health-destination'))->with('success', 'Data Berhasil Ditambahkan');
@@ -73,7 +65,7 @@ class HealthDestinationController extends Controller
      */
     public function show(string $id)
     {
-        $items = HealthDestination::with('faskesKategori', 'Language', 'Layanan')->find($id);
+        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan')->find($id);
         return view(('admin.healthDestination.show'), compact('items'));
     }
 
@@ -82,10 +74,11 @@ class HealthDestinationController extends Controller
      */
     public function edit(string $id)
     {
-        $items = HealthDestination::with('faskesKategori', 'Language', 'Layanan')->find($id);
+        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan')->find($id);
         $faskesKategori = FaskesKategori::get();
+        $bahasa = Bahasa::orderBy('name', 'asc')->get()->pluck('name', 'id');
 
-        return view('admin.healthDestination.edit', compact('faskesKategori', 'items'));
+        return view('admin.healthDestination.edit', compact('faskesKategori', 'items', 'bahasa'));
     }
 
     /**
@@ -93,26 +86,12 @@ class HealthDestinationController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate(
-            [
-                'name' => 'required',
-                'description' => 'required',
-                'faskes_kategori_id' => 'required',
-
-            ],[
-                'name.required' => 'Nama layanan wajib diisi',
-                'description.required' => 'Deskripsi layanan wajib diisi',
-                'faskes_kategori_id.required' => 'Kategori layanan wajib diisi',
-            ]
-        );
-
-        $items = [
-            'name'=>$request->name,
-            'description'=>$request->description,
-            'faskes_kategori_id'=>$request->faskes_kategori_id,
-        ];
-
-        HealthDestination::find($id)->update($items);
+        $destinasi = HealthDestination::findOrFail($id);
+        $destinasi->name = $request->name;
+        $destinasi->description = $request->description;
+        $destinasi->faskes_kategori_id = $request->faskes_kategori_id;
+        $destinasi->update();
+        $destinasi->bahasa()->sync($request->bahasa_id);
 
         return redirect(url('health-destination'))->with('success-update', 'Berhasil update data');
     }
@@ -122,6 +101,11 @@ class HealthDestinationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $hd = HealthDestination::findOrFail($id);
+        $hd->Layanan()->delete();
+        $hd->bahasa()->detach();
+        $hd->delete();
+
+        return back()->with('success-delete', 'Berhasil menghapus data');
     }
 }

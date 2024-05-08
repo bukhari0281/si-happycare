@@ -61,6 +61,17 @@
                                      @endforeach
                                  </select>
                              </div>
+                             <div class="col-md-4">
+                                <label for="bahasa_id">Bahasa yang digunakan</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                               @foreach ($bahasa as $itemID => $namaBahasa)
+                                   <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" name="bahasa_id[]" value="{{ $itemID }}">
+                                       <label class="form-check-label" for="bahasa_id">{{ $namaBahasa }}</label>
+                                   </div>
+                               @endforeach
+                            </div>
                              <div class="col-sm-12 d-flex justify-content-end mt-4">
                                  <button type="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
                                  <button type="reset"

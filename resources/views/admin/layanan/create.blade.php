@@ -3,13 +3,12 @@
 <div class="page-title">
     <div class="row">
         <div class="col-12 col-md-6 order-md-1 order-last">
-            <h3>Form Layout</h3>
-            <p class="text-subtitle text-muted">Multiple form layouts, you can use.</p>
+            <h3>Layanan</h3>
         </div>
         <div class="col-12 col-md-6 order-md-2 order-first">
             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('health-destination') }}">Daftar Tempat</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('layanan') }}">Layanan</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Form Layout</li>
                 </ol>
             </nav>
@@ -21,16 +20,16 @@
  <section id="basic-horizontal-layouts">
      <div class="card">
          <div class="card-header">
-             <h4 class="card-title">Horizontal Form</h4>
-             @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+            <h4 class="card-title">Horizontal Form</h4>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
          </div>
          <div class="card-content">
              <div class="card-body">
@@ -42,8 +41,7 @@
                                  <label for="name">Layanan apa yang akan disediakan</label>
                              </div>
                              <div class="col-md-8 form-group">
-                                 <input type="text" id="name" class="form-control" name="name"
-                                     placeholder="Nama Tempat">
+                                 <input type="text" id="name" class="form-control" name="name"">
                              </div>
                              <div class="col-md-4">
                                  <label for="description">Deskripsi</label>
@@ -52,7 +50,7 @@
                                  <textarea type="text" class="form-control" id="description" name="description" placeholder="Deskripsi" rows="7" ></textarea>
                              </div>
                              <div class="col-md-4">
-                                 <label for="health_destination_id">Kategori Faskes</label>
+                                 <label for="health_destination_id">Faskes?</label>
                              </div>
                              <div class="col-md-8 form-group">
                                  <select class="form-control" id="health_destination_id"  name="health_destination_id" >
@@ -63,7 +61,7 @@
                                  </select>
                              </div>
                              <div class="col-md-4">
-                                 <label for="tourist_destination_id">Kategori Wisata</label>
+                                 <label for="tourist_destination_id">Wisata?</label>
                              </div>
                              <div class="col-md-8 form-group">
                                  <select class="form-control" id="tourist_destination_id"  name="tourist_destination_id" >

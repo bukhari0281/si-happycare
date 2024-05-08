@@ -22,8 +22,10 @@ class HealthDestinasionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'          => 'required',
-            'description'   => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'faskes_kategori_id' => 'required',
+            'bahasa_id' => 'required|array|min:1',
         ];
     }
 }

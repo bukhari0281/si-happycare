@@ -62,8 +62,8 @@
                     </ul>
                     <h4>Bahasa yang tersedia</h4>
                     <ul>
-                        @foreach($items->Language as $service)
-                            <li>{{ $service->name }}</li>
+                        @foreach($items->bahasa as $b)
+                            <li>{{ $b->name }}</li>
                         @endforeach
                     </ul>
                     <h4>Kontak</h4>

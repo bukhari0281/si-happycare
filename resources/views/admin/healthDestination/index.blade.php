@@ -38,6 +38,7 @@
                                     <th>Nama Tempat</th>
                                     <th>Deskripsi</th>
                                     <th>Kategori Faskes</th>
+                                    <th>Bahasa yang digunakan</th>
                                     {{-- <th>Bahasa yang digunakan</th>
                                     <th>Layanan yang disediakan</th> --}}
                                     <th>Aksi</th>
@@ -47,14 +48,16 @@
                                 <?php $i=1; ?>
                                 @forelse ($items as $alt)
                                 <tr>
+                                    <input type="hidden" class="id" value="{{ $alt->id }}">
                                     <td>{{ $i }}</td>
                                     <td>{{ $alt->name }}</td>
                                     <td>{{ $alt->description }}</td>
                                     <td>{{ $alt->faskesKategori->name }}</td>
+                                    <td>{{ implode(', ', $alt->bahasa->pluck('name')->toArray()) }}</td>
                                     <td>
                                           <a href="{{ url("health-destination/$alt->id") }}" class="btn btn-primary block">Detail</a>
                                           <a href="{{ url("health-destination/$alt->id/edit") }}" class="btn btn-secondary block">Edit</a>
-                                          <a href="{{ url("health-destination/$alt->id") }}" class="btn btn-danger block">Hapus</a>
+                                          <button data-bs-toggle="modal" data-bs-target="#deleteHDModal{{ $alt->id }}" class="btn btn-danger block">Hapus</button>
                                     </td>
                                 </tr>
                                 <?php $i++; ?>
@@ -91,6 +94,6 @@
         </div>
     </section>
 </div>
-@include('admin.layanan.delete')
+@include('admin.healthDestination.delete')
 @endsection
 

@@ -51,14 +51,14 @@ class LayananController extends Controller
             ]
         );
 
-            $items = [
-                'name'=>$request->name,
-                'description'=>$request->description,
-                'health_destination_id'=>$request->health_destination_id,
-                'tourist_destination_id'=>$request->tourist_destination_id,
-            ];
+        $items = [
+            'name'=>$request->name,
+            'description'=>$request->description,
+            'health_destination_id'=>$request->health_destination_id,
+            'tourist_destination_id'=>$request->tourist_destination_id,
+        ];
 
-            Service::create($items);
+        Service::create($items);
 
         return redirect(url('layanan'))->with('success', 'Berhasil menambahkan data');
     }
@@ -76,7 +76,10 @@ class LayananController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $items = Service::find($id);
+        $healthDestination = HealthDestination::get();
+        $touristDestination = tourist_destination::get();
+        return view('admin.layanan.edit', compact('items', 'healthDestination', 'touristDestination'));
     }
 
     /**
@@ -84,7 +87,24 @@ class LayananController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate(
+            [
+                'name' => 'required',
+                'description' => 'required',
+            ],[
+                'name.required' => 'Nama layanan wajib diisi',
+                'description.required' => 'Deskripsi layanan wajib diisi',
+            ]
+        );
+        $items = [
+            'name'=>$request->name,
+            'description'=>$request->description,
+            'health_destination_id'=>$request->health_destination_id,
+            'tourist_destination_id'=>$request->tourist_destination_id,
+        ];
+
+        Service::find($id)->update($items);
+        return redirect(url('layanan'))->with('success', 'Berhasil mengubah data');
     }
 
     /**
@@ -92,6 +112,9 @@ class LayananController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $layanan = Service::find($id);
+        $layanan->delete();
+
+        return back()->with('success', 'Berhasil menghapus data');
     }
 }
