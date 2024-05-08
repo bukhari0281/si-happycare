@@ -17,7 +17,7 @@ class HealthDestinationController extends Controller
      */
     public function index()
     {
-        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan')->latest()->get();
+        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'kontak')->latest()->get();
 
         return view('admin.healthDestination.index', compact('items'));
     }
@@ -65,8 +65,9 @@ class HealthDestinationController extends Controller
      */
     public function show(string $id)
     {
-        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan')->find($id);
+        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'Kontak')->find($id);
         return view(('admin.healthDestination.show'), compact('items'));
+        // return dd($items->toArray());
     }
 
     /**

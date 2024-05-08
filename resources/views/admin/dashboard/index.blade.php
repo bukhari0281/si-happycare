@@ -23,8 +23,8 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                        <h6 class="text-muted font-semibold">Pengunjung</h6>
-                        <h6 class="font-extrabold mb-0">112.000</h6>
+                        <h6 class="text-muted font-semibold">Total Wisata</h6>
+                        <h6 class="font-extrabold mb-0">{{ $total_wisata }}</h6>
                     </div>
                 </div>
             </div>
@@ -36,12 +36,12 @@
                 <div class="row">
                     <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                         <div class="stats-icon blue mb-2">
-                            <i class="iconly-boldProfile"></i>
+                            <i class="iconly-boldTicket-Star"></i>
                         </div>
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                        <h6 class="text-muted font-semibold">Jumlah Provider</h6>
-                        <h6 class="font-extrabold mb-0">183.000</h6>
+                        <h6 class="text-muted font-semibold">Total Faskes</h6>
+                        <h6 class="font-extrabold mb-0">{{ $total_faskes }}</h6>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                        <h6 class="text-muted font-semibold">Post Dibagikan</h6>
+                        <h6 class="text-muted font-semibold">Total Reservasi</h6>
                         <h6 class="font-extrabold mb-0">80.000</h6>
                     </div>
                 </div>
@@ -86,10 +86,86 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4>Kunjungan Landing Page</h4>
+                <h4>Data Destinasi Faskes Terbaru</h4>
             </div>
             <div class="card-body">
-                <div id="chart-profile-visit"></div>
+                <div class="table-responsive">
+                    <table class="table table-hover table-lg">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Deskripsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($faskes as $key => $value)
+                            <tr>
+                                <td class="col-3">
+                                    <div class="d-flex align-items-center">
+                                        <p class="font-bold ms-3 mb-0">{{ $value->name }}</p>
+                                    </div>
+                                </td>
+                                <td class="col-auto">
+                                    <p class=" mb-0">{{ $value->description }}</p>
+                                </td>
+                            </tr>
+
+                            @empty
+                            <tr>
+                                <td>
+                                    data kosong
+                                </td>
+                                <td>
+                                    data kosong
+                                </td>
+                            </tr>
+
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Data Destinasi Wisata Terbaru</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-lg">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Deskripsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($wisata as $key => $value)
+                            <tr>
+                                <td class="col-3">
+                                    <div class="d-flex align-items-center">
+                                        <p class="font-bold ms-3 mb-0">{{ $value->name }}</p>
+                                    </div>
+                                </td>
+                                <td class="col-auto">
+                                    <p class=" mb-0">{{ $value->description }}</p>
+                                </td>
+                            </tr>
+
+                            @empty
+                            <tr>
+                                <td>
+                                    data kosong
+                                </td>
+                                <td>
+                                    data kosong
+                                </td>
+                            </tr>
+
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

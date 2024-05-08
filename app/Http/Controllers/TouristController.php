@@ -65,8 +65,9 @@ class TouristController extends Controller
      */
     public function show(string $id)
     {
-        $items = tourist_destination::with('bahasa', 'wisataKategori')->find($id);
+        $items = tourist_destination::with('bahasa', 'wisataKategori', 'kontak')->find($id);
         return view(('admin.touristDestination.show'), compact('items'));
+        // return dd($items->toArray());
     }
 
     /**

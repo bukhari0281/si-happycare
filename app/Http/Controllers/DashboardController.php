@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bahasa;
+use App\Models\HealthDestination;
 use App\Models\tourist_destination;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard.index');
+        $total_wisata = tourist_destination::count();
+        $total_faskes = HealthDestination::count();
+        $faskes = HealthDestination::get();
+        $wisata = tourist_destination::get();
+        return view('admin.dashboard.index', compact('total_wisata', 'total_faskes', 'faskes', 'wisata'));
     }
 
     public function store(Request $request)

@@ -67,7 +67,12 @@
                         @endforeach
                     </ul>
                     <h4>Kontak</h4>
-                    <p>{{ $items->faskesKategori->name }}</p>
+                    <ul>
+                        <li> {{ $items->kontak->email }} </li>
+                        <li> {{ $items->kontak->city->name }} </li>
+                        <li> {{ $items->kontak->address }} </li>
+                        <li> {{ $items->kontak->phone }} </li>
+                    </ul>
                 </div>
                 </div>
             </div>

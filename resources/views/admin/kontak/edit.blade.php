@@ -74,8 +74,23 @@
                             </div>
                             <div class="col-md-8 form-group">
                                 <select class="form-control" id="tourist_destination_id"  name="tourist_destination_id" >
+                                    <option value="">-- Pilih --</option>
                                     @foreach ($touristDestination as $td)
                                     @if($td->id == $items->tourist_destination_id)
+                                        <option value="{{ $td->id }}" selected>{{ $td->name }}</option>
+                                    @endif
+                                        <option value="{{ $td->id }}">{{ $td->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="health_destination_id">Faskes?</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <select class="form-control" id="health_destination_id"  name="health_destination_id" >
+                                    <option value="">-- Pilih --</option>
+                                    @foreach ($healthDestination as $td)
+                                    @if($td->id == $items->health_destination_id)
                                         <option value="{{ $td->id }}" selected>{{ $td->name }}</option>
                                     @endif
                                         <option value="{{ $td->id }}">{{ $td->name }}</option>

@@ -21,4 +21,10 @@ class tourist_destination extends Model
     {
         return $this->belongsTo(WisataKategori::class);
     }
+
+
+    public function kontak()
+    {
+        return $this->hasOne(Contact::class);
+    }
 }

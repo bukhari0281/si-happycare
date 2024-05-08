@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tourist_destinations', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("description");
+            $table->longText("description");
             $table->foreignId('wisata_kategori_id')->constrained();
 
             $table->softDeletes();
