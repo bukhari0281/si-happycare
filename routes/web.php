@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HealthDestination;
@@ -30,7 +31,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('index_das
 Route::get('/dashboard/store', [DashboardController::class, 'store']);
 Route::resource('/health-destination', HealthDestinationController::class); // HEALTH DESTINATION
 Route::resource('/tourist-destination', TouristController::class); // HEALTH DESTINATION
-Route::resource('/kontak', KontakController::class); // HEALTH DESTINATION
+Route::resource('/galeri', GalleryController::class); // GALERI
+Route::resource('/kontak', KontakController::class); // KONTAK
 Route::resource('/layanan', LayananController::class); // LAYANAN
 Route::resource('/bahasa', LanguageController::class); // BAHASA
 Route::resource('/fasilitas', FasilitasController::class); // FASILITAS

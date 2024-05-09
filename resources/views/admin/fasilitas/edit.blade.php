@@ -55,6 +55,7 @@
                             </div>
                             <div class="col-md-8 form-group">
                                 <select class="form-control" id="health_destination_id"  name="health_destination_id" >
+                                    <option value="">-- Pilih --</option>
                                     @foreach ($healthDestination as $hd)
                                     @if($hd->id == $items->health_destination_id)
                                         <option value="{{ $hd->id }}" selected>{{ $hd->name }}</option>
@@ -68,6 +69,7 @@
                             </div>
                             <div class="col-md-8 form-group">
                                 <select class="form-control" id="tourist_destination_id"  name="tourist_destination_id" >
+                                    <option value="">-- Pilih --</option>
                                     @foreach ($touristDestination as $td)
                                     @if($td->id == $items->tourist_destination_id)
                                         <option value="{{ $td->id }}" selected>{{ $td->name }}</option>

@@ -65,7 +65,7 @@ class HealthDestinationController extends Controller
      */
     public function show(string $id)
     {
-        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'Kontak')->find($id);
+        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'Kontak','galeri')->find($id);
         return view(('admin.healthDestination.show'), compact('items'));
         // return dd($items->toArray());
     }

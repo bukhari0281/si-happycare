@@ -18,6 +18,11 @@ class HealthDestination extends Model
     {
         return $this->belongsToMany(Bahasa::class, 'bahasa_tourist_health_destination', 'health_destination_id', 'bahasa_id');
     }
+    public function galeri()
+    {
+        return $this->hasMany(Gallery::class);
+    }
+
     public function Layanan()
     {
         return $this->hasMany(Service::class);

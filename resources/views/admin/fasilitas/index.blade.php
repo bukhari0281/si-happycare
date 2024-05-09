@@ -37,8 +37,7 @@
                                     <th>No.</th>
                                     <th>Fasilitas</th>
                                     <th>Jumlah</th>
-                                    <th>Wisata</th>
-                                    <th>Faskes</th>
+                                    <th>Jenis</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -53,12 +52,11 @@
                                         <td>{{ $alt->name }}</td>
                                         <td>{{ $alt->qty }}</td>
                                         @if ($alt->healthDestination )
-                                            <td>{{ $alt->healthDestination->name }}</td>
+                                            <td>Faskes {{ $alt->healthDestination->name }}</td>
                                         @endif
-                                        {{-- @if ($alt->touristDestination)
-                                            <td>{{ $alt->touristDestination->name }}</td>
-                                        @endif --}}
-                                        <td>{{ $alt->name }}</td>
+                                        @if ($alt->touristDestination)
+                                            <td>Wisata {{ $alt->touristDestination->name }}</td>
+                                        @endif
                                         <td>
                                                 <a href="{{ url("fasilitas/$alt->id/edit") }}" class="btn btn-secondary block">Edit</a>
                                                 <button data-bs-toggle="modal" data-bs-target="#deleteFasilitasModal{{ $alt->id }}" class="btn btn-danger block">Hapus</button>

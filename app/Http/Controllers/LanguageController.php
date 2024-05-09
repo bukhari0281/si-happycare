@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bahasa;
 use App\Models\HealthDestination;
 use App\Models\Language;
 use App\Models\tourist_destination;
@@ -14,7 +15,7 @@ class LanguageController extends Controller
      */
     public function index()
     {
-        $items = Language::with('healthDestination','touristDestination')->latest()->get();
+        $items = Bahasa::with('healthDestination','touristDestination')->latest()->get();
         return view('admin.language.index', compact('items'));
     }
 

@@ -42,70 +42,54 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li
-                    class="sidebar-item active">
+                <li class="sidebar-item active">
                     <a href="{{ route('index_dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
-
-
                 </li>
 
-                <li
-                    class="sidebar-item  has-sub">
+                <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-person-circle"></i>
                         <span>Account</span>
                     </a>
 
                     <ul class="submenu ">
-
                         <li class="submenu-item  ">
                             <a href="account-profile.html" class="submenu-link">Profile</a>
-
                         </li>
 
                         <li class="submenu-item  ">
                             <a href="account-security.html" class="submenu-link">Security</a>
-
                         </li>
-
                     </ul>
 
 
                 </li>
 
-                <li
-                    class="sidebar-item  has-sub">
+                <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-person-badge-fill"></i>
                         <span>Authentication</span>
                     </a>
 
                     <ul class="submenu ">
-
                         <li class="submenu-item  ">
                             <a href="auth-login.html" class="submenu-link">Login</a>
-
                         </li>
-
                         <li class="submenu-item  ">
                             <a href="auth-register.html" class="submenu-link">Register</a>
-
                         </li>
-
                         <li class="submenu-item  ">
                             <a href="auth-forgot-password.html" class="submenu-link">Forgot Password</a>
-
                         </li>
-
                     </ul>
 
 
                 </li>
 
-                <li class="sidebar-title">Data</li>
+                <li class="sidebar-title">VALIDASI RESERVASI</li>
 
                 <li
                     class="sidebar-item  has-sub">
@@ -115,11 +99,11 @@
                     </a>
                 </li>
 
-                <li class="sidebar-title">Data</li>
+                <li class="sidebar-title">DATA DESTINASI</li>
 
                 <li class="sidebar-item  has-sub">
                     <a href="{{ url('form-utama') }}" class='sidebar-link'>
-                        <i class="bi bi-hexagon-fill"></i>
+                        <i class="bi bi-emoji-tear-fill"></i>
                         <span>Health Destination</span>
                     </a>
                     <ul class="submenu ">
@@ -136,7 +120,7 @@
 
                 <li class="sidebar-item  has-sub">
                     <a href="{{ url('tourist-destination') }}" class='sidebar-link'>
-                        <i class="bi bi-hexagon-fill"></i>
+                        <i class="bi bi-emoji-grin-fill"></i>
                         <span>Tourist Destination</span>
                     </a>
                     <ul class="submenu ">
@@ -153,7 +137,22 @@
 
                 <li class="sidebar-item has-sub ">
                     <a href="form-layout.html" class='sidebar-link'>
-                        <i class="bi bi-file-earmark-medical-fill"></i>
+                        <i class="bi bi-images"></i>
+                        <span>Galeri</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item  ">
+                            <a href="{{ url('galeri') }}" class="submenu-link">Daftar Gambar</a>
+                        </li>
+                        <li class="submenu-item  ">
+                            <a href="{{ url('galeri/create') }}" class="submenu-link">Tambah</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item has-sub ">
+                    <a href="form-layout.html" class='sidebar-link'>
+                        <i class="bi bi-telephone-inbound"></i>
                         <span>Kontak</span>
                     </a>
                     <ul class="submenu ">
@@ -168,7 +167,7 @@
 
                 <li class="sidebar-item has-sub">
                     <a href="#" class='sidebar-link'>
-                        <i class="bi bi-journal-check"></i>
+                        <i class="bi bi-emoji-wink-fill"></i>
                         <span>Fasilitas</span>
                     </a>
                     <ul class="submenu ">

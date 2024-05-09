@@ -21,9 +21,9 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <a class="btn btn-outline-primary block" href="{{ url('bahasa/create') }}">
+                {{-- <a class="btn btn-outline-primary block" href="{{ url('bahasa/create') }}">
                         Tambah Bahasa
-                </a>
+                </a> --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -60,9 +60,6 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>Faskes</th>
-                                    <th>Wisata</th>
-                                    <th>Bahasa yang tersedia</th>
-                                    <th>Aksi</th>
 
                                 </tr>
                             </thead>
@@ -71,18 +68,7 @@
                                 @forelse ($items as $alt)
                                 <tr>
                                     <td>{{ $i }}</td>
-                                    @if ($alt->healthDestination )
-                                    <td>{{ $alt->healthDestination->name }}</td>
-                                    @endif
-                                    {{-- @if ($alt->touristDestination)
-                                        <td>{{ $alt->touristDestination->name }}</td>
-                                    @endif --}}
                                     <td>{{ $alt->name }}</td>
-                                    <td>{{ $alt->name }}</td>
-                                    <td>
-                                        <button data-bs-toggle="modal" data-bs-target="#editLayananModal{{ $alt->id }}" class="btn btn-secondary block">Edit</button>
-                                        <button data-bs-toggle="modal" data-bs-target="#deleteLayananModal{{ $alt->id }}" class="btn btn-danger block">Hapus</button>
-                                    </td>
                                 </tr>
                                 <?php $i++; ?>
                                 @empty
