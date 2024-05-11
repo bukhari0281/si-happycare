@@ -3,7 +3,15 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\City;
+use App\Models\Contact;
+use App\Models\HealthDestination;
+use App\Models\Service;
+use App\Models\tourist_destination;
+use Database\Factories\FaskesFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +26,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+
+        // HealthDestination::factory(10)->create();
+        // tourist_destination::factory(20)->create();
+        // City::factory(10)->create();
+        Contact::factory(10)->create();
+        // Service::factory(10)->create();
+
+
     }
 }

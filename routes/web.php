@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GalleryController;
@@ -41,8 +42,12 @@ Route::get('jenis/faskes', [CategoryController::class, 'index_jenis_faskes']); /
 
 
 // CLIENT -> Halaman untuk front-end
-Route::get('/', function () {
-    return view('client.utils.layout');
-});
+Route::get('/', [ClientController::class, 'home']); // HOME
+Route::get('/about-us', [ClientController::class, 'about']); // about
+Route::get('/contact-us', [ClientController::class, 'contact']); // contact
+Route::get('/faskes', [ClientController::class, 'faskes']); // faskes
+Route::get('/faskes/{id}', [ClientController::class, 'detail_faskes']); // detail faskes
+Route::get('/wisata', [ClientController::class, 'wisata']); // wisata
+Route::get('/wisata/{id}', [ClientController::class, 'detail_wisata']); // detail wisata
 
 

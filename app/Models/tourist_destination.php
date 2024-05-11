@@ -27,4 +27,9 @@ class tourist_destination extends Model
     {
         return $this->hasOne(Contact::class);
     }
+
+    public function galeri()
+    {
+        return $this->hasMany(Gallery::class);
+    }
 }

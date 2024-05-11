@@ -17,6 +17,7 @@ class DashboardController extends Controller
         $wisata = tourist_destination::get();
         return view('admin.dashboard.index', compact('total_wisata', 'total_faskes', 'faskes', 'wisata'));
     }
+    
 
     public function store(Request $request)
     {
