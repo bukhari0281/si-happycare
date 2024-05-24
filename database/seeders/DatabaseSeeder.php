@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\City;
 use App\Models\Contact;
+use App\Models\FaskesKategori;
 use App\Models\HealthDestination;
 use App\Models\Service;
 use App\Models\tourist_destination;
@@ -27,12 +28,18 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        // Dijalankan Sesuai dengan urutan
 
-        // HealthDestination::factory(10)->create();
-        // tourist_destination::factory(20)->create();
-        // City::factory(10)->create();
-        Contact::factory(10)->create();
-        // Service::factory(10)->create();
+        // City::factory(34)->create(); // --> 1
+        // $this->call([
+        //     FaskesKategoriSeeder::class,  // --> 2
+        //     WisataKategoriSeeder::class,  // --> 2
+        // ]);
+
+        // HealthDestination::factory(10)->create(); // --> 3
+        // tourist_destination::factory(10)->create(); // --> 3
+        Contact::factory(10)->create(); // --> 4
+        // Service::factory(20)->create(); // --> 5
 
 
     }

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("url");
 
-            $table->foreignId("health_destination_id")->constrained("health_destinations")->nullable();
-            $table->foreignId("tourist_destination_id")->constrained("tourist_destinations")->nullable();
+            $table->foreignId("health_destination_id")->nullable()->constrained("health_destinations");
+            $table->foreignId("tourist_destination_id")->nullable()->constrained("tourist_destinations");
 
             $table->softDeletes();
             $table->timestamps();
