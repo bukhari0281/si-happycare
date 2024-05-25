@@ -42,7 +42,8 @@ Route::get('jenis/faskes', [CategoryController::class, 'index_jenis_faskes']); /
 
 
 // CLIENT -> Halaman untuk front-end
-Route::get('/', [ClientController::class, 'home']); // HOME
+Route::get('/', [ClientController::class, 'home']); // home
+Route::post('/faskes/search', [ClientController::class, 'home']); // search
 Route::get('/about-us', [ClientController::class, 'about']); // about
 Route::get('/contact-us', [ClientController::class, 'contact']); // contact
 Route::get('/faskes', [ClientController::class, 'faskes']); // faskes

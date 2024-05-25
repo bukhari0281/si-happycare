@@ -1,11 +1,31 @@
 @extends('client.utils.layout')
 @section('content')
+<style>
+    #hero {
+        margin-top: 100px;
+        background-color: #e7f3ff;
+        height: 80vh;
+        /* background-image:  */
+    }
+</style>
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  <section id="hero" class="d-flex align-items-center" >
     <div class="container">
-      <h1>Welcome to Medilab</h1>
+      <h1 class="text-primary">Welcome to Medilab</h1>
       <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <form action="{{ url('faskes/search') }}" class="my-3" method="POST">
+        @csrf
+        <div class="form-body">
+            <div class="row">
+                <div class="col-12">
+                    <input type="text" class="form-control my-3" name="keyword" placeholder="Search Hospital or Services">
+                </div>
+                <div class="col-md-8 form-group">
+                    <button type="submit" id="button-search" class="btn-get-started scrollto">Search Now</button>
+                </div>
+            </div>
+        </div>
+      </form>
     </div>
   </section><!-- End Hero -->
 

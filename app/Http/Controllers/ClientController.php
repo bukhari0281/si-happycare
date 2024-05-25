@@ -10,8 +10,31 @@ class ClientController extends Controller
 {
     public function home()
     {
-        return view('client.home.index' );
+        $keyword = request()->keyword;
+
+        if ($keyword) {
+            $latest_faskes = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'kontak', 'galeri')
+                ->where('name', 'like', '%' . $keyword . '%')
+                ->latest()
+                ->paginate(6);
+
+            // Jika tidak ada hasil di latest_faskes, cari di latest_wisata
+            if ($latest_faskes->isEmpty()) {
+                $latest_wisata = tourist_destination::with('bahasa', 'kontak', 'galeri')
+                                    ->where('name', 'like', '%' . $keyword . '%')
+                                    ->latest()
+                                    ->paginate(6);
+
+                return view('client.wisata.index', compact('latest_wisata'));
+            } else {
+                return view('client.faskes.index', compact('latest_faskes'));
+        }
+        }
+
+        // Jika tidak ada keyword, tampilkan halaman 'client.home.index'
+        return view('client.home.index');
     }
+
     public function about()
     {
         return view('client.home.about_us');
