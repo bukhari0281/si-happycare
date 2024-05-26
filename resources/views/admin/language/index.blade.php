@@ -59,7 +59,7 @@
 
                                 <tr>
                                     <th>No.</th>
-                                    <th>Faskes</th>
+                                    <th>Bahasa</th>
 
                                 </tr>
                             </thead>

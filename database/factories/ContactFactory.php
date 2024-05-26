@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,19 +15,27 @@ class ContactFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected static $healthDestinationIdCounter = 1; // Variabel static untuk menghitung ID
+
     public function definition(): array
     {
-        $allIds = range(1, 10); // Buat array dengan semua ID dari 1 hingga 10
-
-        shuffle($allIds); // Acak urutan ID
-
         return [
             'address' => $this->faker->address(mt_rand(1, 5)),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
             'city_id' => mt_rand(1, 10),
-            'health_destination_id' => mt_rand(1, 10), // Ambil 5 ID pertama
-            'tourist_destination_id' => mt_rand(1, 10), // Ambil 5 ID terakhir
+            // 'tourist_destination_id' => mt_rand(1, 10), // Ambil 5 ID terakhir
+            'health_destination_id' => self::$healthDestinationIdCounter++, // Menggunakan counter dan increment
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (Contact $contact) {
+            // Reset counter jika mencapai batas
+            if (self::$healthDestinationIdCounter > 10) {
+                self::$healthDestinationIdCounter = 1;
+            }
+        });
     }
 }

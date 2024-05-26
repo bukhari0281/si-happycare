@@ -48,6 +48,13 @@ class ClientController extends Controller
         $latest_faskes = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'kontak', 'galeri')->latest()->paginate(9);
         return view('client.faskes.index', compact('latest_faskes'));
     }
+
+    public function show_faskes($name)
+    {
+        $data = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'kontak', 'galeri')->where('name', $name)->first();
+        return view('client.faskes.show', compact('data'));
+    }
+
     public function detail_faskes() // DETAIL FASKES
     {
         return view('client.faskes.show');

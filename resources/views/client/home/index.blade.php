@@ -21,7 +21,7 @@
                     <input type="text" class="form-control my-3" name="keyword" placeholder="Search Hospital or Services">
                 </div>
                 <div class="col-md-8 form-group">
-                    <button type="submit" id="button-search" class="btn-get-started scrollto">Search Now</button>
+                    <button type="submit" id="button-search" class="btn btn-get-started scrollto">Search Now</button>
                 </div>
             </div>
         </div>

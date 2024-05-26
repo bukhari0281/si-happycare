@@ -17,8 +17,8 @@ class BahasaFactory extends Factory
     public function definition(): array
     {
         return [
-            'bahasa_id' => mt_rand(1, 6),
-            'health_destination_id' => mt_rand(1, 13),
+            'id' => mt_rand(1, 6),
+            'health_destination_id' => mt_rand(1, 10),
             // 'tourist_destination_id' => $this->faker->name,
         ];
     }

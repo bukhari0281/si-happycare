@@ -44,20 +44,9 @@ class HealthDestinationController extends Controller
         $destinasi->faskes_kategori_id = $request->faskes_kategori_id;
         $destinasi->save();
 
-        // Menyinkronkan bahasa_id dengan tabel pivot
-
-        // // Insert Img
-        // $file = $request->file('img'); // img
-        // $fileName = uniqid().'.'.$file->getClientOriginalExtension(); // jpg, jpeg
-        // $file->storeAs('public/healthDestination/', $fileName); // public/healthDestination/gambar.jpg
-
-        // $data['img'] = $fileName;
-
-        // Menyinkronkan bahasa_id dengan tabel pivot
         $destinasi->bahasa()->sync($request->bahasa_id);
 
-        // return dd($items);
-        return redirect(url('health-destination'))->with('success', 'Data Berhasil Ditambahkan');
+        return redirect(url('admin/health-destination'))->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -67,7 +56,6 @@ class HealthDestinationController extends Controller
     {
         $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'Kontak','galeri')->find($id);
         return view(('admin.healthDestination.show'), compact('items'));
-        // return dd($items->toArray());
     }
 
     /**
@@ -94,7 +82,7 @@ class HealthDestinationController extends Controller
         $destinasi->update();
         $destinasi->bahasa()->sync($request->bahasa_id);
 
-        return redirect(url('health-destination'))->with('success-update', 'Berhasil update data');
+        return redirect(url('admin/health-destination'))->with('success-update', 'Berhasil update data');
     }
 
     /**

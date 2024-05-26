@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Bahasa;
 use App\Models\City;
 use App\Models\Contact;
 use App\Models\FaskesKategori;
@@ -30,16 +31,20 @@ class DatabaseSeeder extends Seeder
 
         // Dijalankan Sesuai dengan urutan
 
-        // City::factory(34)->create(); // --> 1
+        // City::factory(30)->create(); // --> 1
         // $this->call([
         //     FaskesKategoriSeeder::class,  // --> 2
         //     WisataKategoriSeeder::class,  // --> 2
+        //     // ServiceSeeder::class,  // --> 2
+        //     LanguageSeeder::class,  // --> 2
         // ]);
 
-        // HealthDestination::factory(10)->create(); // --> 3
+        // HealthDestination::factory(10)
+        //         ->create(); // --> 3
         // tourist_destination::factory(10)->create(); // --> 3
         Contact::factory(10)->create(); // --> 4
         // Service::factory(20)->create(); // --> 5
+        // Bahasa::factory(10)->create(); // --> 6
 
 
     }

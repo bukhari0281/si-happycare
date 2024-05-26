@@ -34,29 +34,6 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate(
-        //     [
-        //         'url' => 'required|image|max:1024|mimes:jpg,jpeg,png',
-        //     ],[
-        //         'qty.required' => 'Deskripsi layanan wajib diisi',
-        //     ]
-        // );
-
-        // $items = [
-        //     'url'=>$request->url,
-        //     'health_destination_id'=>$request->health_destination_id,
-        //     'tourist_destination_id'=>$request->tourist_destination_id,
-        // ];
-
-        // $file = $request->file('url'); // Foto
-        // $fileName = uniqid().'.'.$file->getClientOriginalName(); // ambil ekstensinya jpg, jpeg, dan png
-        // $file->storeAs('public/gallery', $fileName); // simpan ke folder public/gallery/(dan memiliki nama yang random.jpg)
-        // $items['url'] = $fileName;
-
-        // Gallery::create($items);
-
-        // return redirect(url('gallery'))->with('success', 'Berhasil menambahkan data');
-
         $request->validate(
             [
                 'url.*' => 'required|image|max:1024|mimes:jpg,jpeg,png', // Adjusted for an array of files
@@ -87,9 +64,9 @@ class GalleryController extends Controller
 
         Gallery::insert($galleryItems); // Insert multiple records at once
 
-        // return redirect(url('gallery'))->with('success', 'Berhasil menambahkan data');
+        return redirect(url('admin/galeri'))->with('success', 'Berhasil menambahkan data');
         // return dd($galleryItems);
-        return dd($galleryItems)->toArray();
+        // return dd($galleryItems)->toArray();
     }
 
     /**

@@ -38,14 +38,6 @@ class TouristController extends Controller
      */
     public function store(TouristDestinationRequest $request)
     {
-        // $items = $request->validated();
-
-        // if ($td = tourist_destination::create($items)) {
-        //     $td->bahasa()->sync($items['bahasa_id']);
-
-        //     // return redirect(url('tourist-destination'))->with('success', 'Added!');
-        //     return redirect(dd($request));
-        // }
          // Membuat destinasi baru
         $destinasi = new tourist_destination;
         $destinasi->name = $request->name;
@@ -56,7 +48,7 @@ class TouristController extends Controller
         // Menyinkronkan bahasa_id dengan tabel pivot
         $destinasi->bahasa()->sync($request->bahasa_id);
 
-        return redirect(url('tourist-destination'))->with('success', 'Added!');
+        return redirect(url('admin/tourist-destination'))->with('success', 'Added!');
 
     }
 
@@ -94,7 +86,7 @@ class TouristController extends Controller
         $destinasi->update();
         $destinasi->bahasa()->sync($request->bahasa_id);
 
-        return redirect(url('tourist-destination'))->with('success-update', 'Berhasil update data');
+        return redirect(url('admin/tourist-destination'))->with('success-update', 'Berhasil update data');
     }
 
     /**

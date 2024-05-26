@@ -102,34 +102,34 @@
                 <li class="sidebar-title">DATA DESTINASI</li>
 
                 <li class="sidebar-item  has-sub">
-                    <a href="{{ url('form-utama') }}" class='sidebar-link'>
+                    <a href="{{ url('admin/form-utama') }}" class='sidebar-link'>
                         <i class="bi bi-emoji-tear-fill"></i>
                         <span>Health Destination</span>
                     </a>
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('health-destination') }}" class="submenu-link">Daftar Tempat</a>
+                            <a href="{{ url('admin/health-destination') }}" class="submenu-link">Daftar Tempat</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('health-destination/create') }}" class="submenu-link">Tambah</a>
+                            <a href="{{ url('admin/health-destination/create') }}" class="submenu-link">Tambah</a>
                         </li>
 
                     </ul>
                 </li>
 
                 <li class="sidebar-item  has-sub">
-                    <a href="{{ url('tourist-destination') }}" class='sidebar-link'>
+                    <a href="{{ url('admin/tourist-destination') }}" class='sidebar-link'>
                         <i class="bi bi-emoji-grin-fill"></i>
                         <span>Tourist Destination</span>
                     </a>
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('tourist-destination') }}" class="submenu-link">Daftar Tempat</a>
+                            <a href="{{ url('admin/tourist-destination') }}" class="submenu-link">Daftar Tempat</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('tourist-destination/create') }}" class="submenu-link">Tambah</a>
+                            <a href="{{ url('admin/tourist-destination/create') }}" class="submenu-link">Tambah</a>
                         </li>
 
                     </ul>
@@ -142,10 +142,10 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item  ">
-                            <a href="{{ url('galeri') }}" class="submenu-link">Daftar Gambar</a>
+                            <a href="{{ url('admin/galeri') }}" class="submenu-link">Daftar Gambar</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('galeri/create') }}" class="submenu-link">Tambah</a>
+                            <a href="{{ url('admin/galeri/create') }}" class="submenu-link">Tambah</a>
                         </li>
                     </ul>
                 </li>
@@ -157,10 +157,10 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item  ">
-                            <a href="{{ url('kontak') }}" class="submenu-link">Daftar Kontak</a>
+                            <a href="{{ url('admin/kontak') }}" class="submenu-link">Daftar Kontak</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('kontak/create') }}" class="submenu-link">Tambah</a>
+                            <a href="{{ url('admin/kontak/create') }}" class="submenu-link">Tambah</a>
                         </li>
                     </ul>
                 </li>
@@ -173,27 +173,27 @@
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('fasilitas') }}" class="submenu-link">Daftar Fasilitas</a>
+                            <a href="{{ url('admin/fasilitas') }}" class="submenu-link">Daftar Fasilitas</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('fasilitas/create') }}" class="submenu-link">Tambah</a>
+                            <a href="{{ url('admin/fasilitas/create') }}" class="submenu-link">Tambah</a>
                         </li>
 
                     </ul>
                 </li>
 
                 <li class="sidebar-item has-sub">
-                    <a href="{{ url('layanan') }}" class='sidebar-link'>
+                    <a href="{{ url('admin/layanan') }}" class='sidebar-link'>
                         <i class="bi bi-activity"></i>
                         <span>Layanan</span>
                     </a>
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('layanan') }}" class="submenu-link">Daftar Tempat</a>
+                            <a href="{{ url('admin/layanan') }}" class="submenu-link">Daftar Tempat</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('layanan/create') }}" class="submenu-link">Tambah</a>
+                            <a href="{{ url('admin/layanan/create') }}" class="submenu-link">Tambah</a>
                         </li>
 
                     </ul>
@@ -207,27 +207,27 @@
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('jenis/faskes') }}" class="submenu-link">Daftar Kategori Faskes</a>
+                            <a href="{{ url('admin/jenis/faskes') }}" class="submenu-link">Daftar Kategori Faskes</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('jenis/wisata') }}" class="submenu-link">Daftar Kategori Wisata</a>
+                            <a href="{{ url('admin/jenis/wisata') }}" class="submenu-link">Daftar Kategori Wisata</a>
                         </li>
 
                     </ul>
                 </li>
 
                 <li class="sidebar-item has-sub">
-                    <a href="{{ url('bahasa') }}" class='sidebar-link'>
+                    <a href="{{ url('admin/bahasa') }}" class='sidebar-link'>
                         <i class="bi bi-file-font-fill"></i>
                         <span>Bahasa</span>
                     </a>
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('bahasa') }}" class="submenu-link">Daftar Bahasa</a>
+                            <a href="{{ url('admin/bahasa') }}" class="submenu-link">Daftar Bahasa</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('bahasa/create') }}" class="submenu-link">Tambah</a>
+                            <a href="{{ url('admin/bahasa/create') }}" class="submenu-link">Tambah</a>
                         </li>
 
                     </ul>

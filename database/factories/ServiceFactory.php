@@ -19,7 +19,7 @@ class ServiceFactory extends Factory
         return [
             'name' => $this->faker->word(mt_rand(5, 8)),
             'description' => $this->faker->paragraph(mt_rand(5, 8)),
-            'health_destination_id' => mt_rand(1, 13),
+            'health_destination_id' => mt_rand(1, 10),
             // 'tourist_destination_id' => $this->faker->name,
         ];
     }

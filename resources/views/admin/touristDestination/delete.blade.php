@@ -14,7 +14,7 @@ aria-labelledby="deleteTDModalTitle" aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-          <form action="{{ url('tourist-destination/'.$item->id) }}" method="POST">
+          <form action="{{ url('admin/tourist-destination/'.$item->id) }}" method="POST">
             @method('DELETE')
             @csrf
             <p>

@@ -54,7 +54,7 @@ class FasilitasController extends Controller
 
         Facility::create($items);
 
-        return redirect(url('fasilitas'))->with('success', 'Berhasil menambahkan data');
+        return redirect(url('admin/fasilitas'))->with('success', 'Berhasil menambahkan data');
     }
 
     /**
@@ -99,7 +99,7 @@ class FasilitasController extends Controller
         ];
 
         Facility::find($id)->update($items);
-        return redirect(url('fasilitas'))->with('success', 'Berhasil mengubah data');
+        return redirect(url('admin/fasilitas'))->with('success', 'Berhasil mengubah data');
     }
 
     /**

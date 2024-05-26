@@ -24,8 +24,8 @@ return new class extends Migration
         Schema::create('bahasa_tourist_health_destination', function (Blueprint $table) {
             $table->id();
             $table->foreignId('bahasa_id')->constrained();
-            $table->foreignId('tourist_destination_id')->constrained()->nullable();
-            $table->foreignId('health_destination_id')->constrained()->nullable();
+            $table->foreignId('tourist_destination_id')->nullable()->constrained();
+            $table->foreignId('health_destination_id')->nullable()->constrained();
         });
     }
 

@@ -48,23 +48,25 @@
             <div class="col-lg-4 col-md-6">
                 <div class="blog-item p-0">
                     <div class="blog-img  pb-0">
-                        @if($item->galeri->isNotEmpty())
-                        <div class="blog-img-inner">
-                            <img class="img-fluid w-100 rounded-top" src="{{ asset('storage/gallery/'.$item->galeri->first()->url) }}" alt="Image">
-                        </div>
-                        @else
+                        <a href="{{ url('faskes/'.$item->name) }}">
+                            @if($item->galeri->isNotEmpty())
                             <div class="blog-img-inner">
-                                <img class="img-fluid w-100 rounded-top" src="{{ asset('storage/gallery/happycare.png') }}" alt="Image">
+                                <img class="img-fluid w-100 rounded-top" src="{{ asset('storage/gallery/'.$item->galeri->first()->url) }}" alt="Image">
                             </div>
-                        @endif
+                            @else
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="{{ asset('storage/gallery/happycare.png') }}" alt="Image">
+                                </div>
+                            @endif
+                        </a>
                     </div>
                     <div class="blog-content border border-top-0 rounded-bottom p-4">
                         <div class="d-flex flex-column">
-                            <a href="#" class="h4 mb-3">{{ $item->name }}</a>
+                            <a href="{{ url('faskes/'.$item->name) }}" class="h4 mb-3">{{ $item->name }}</a>
                             <p> <i class="fa fa-calendar-alt text-primary me-2 mb-0"></i>{{ $item->kontak->address }} </p>
                             <p> <i class="fa fa-calendar-alt text-primary me-2 mb-2"></i>{{ $item->kontak->phone }} </p>
                         </div>
-                        <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                        <a href="{{ url('faskes/'.$item->name) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
                     </div>
                 </div>
             </div>
