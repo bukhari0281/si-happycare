@@ -9,7 +9,7 @@
         <div class="col-12 col-md-6 order-md-2 order-first">
             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('bahasa') }}">Bahasa</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('admin/bahasa') }}">Bahasa</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Form Input</li>
                 </ol>
             </nav>
@@ -34,7 +34,7 @@
          </div>
          <div class="card-content">
              <div class="card-body">
-                 <form action="{{ url('bahasa') }}" method="POST" class="form form-horizontal" enctype="multipart/form-data">
+                 <form action="{{ url('admin/bahasa') }}" method="POST" class="form form-horizontal" enctype="multipart/form-data">
                      @csrf
                      <div class="form-body">
                          <div class="row">

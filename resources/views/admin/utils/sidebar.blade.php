@@ -233,6 +233,13 @@
                     </ul>
                 </li>
 
+                <li class="sidebar-item">
+                    <a href="{{ url('auth/logout') }}" class='sidebar-link'>
+                        <i class="bi bi-file-font-fill"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
 
         </div>
     </div>

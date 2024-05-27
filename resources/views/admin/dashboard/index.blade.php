@@ -8,6 +8,7 @@
 
 <div class="page-heading">
 <h3>Profile Statistics</h3>
+<h3>Selamat datang <span class="text-primary">{{ Auth::user()->name }}</span> sebagai <span class="text-secondary">{{ Auth::user()->level }}</span></h1></h3>
 </div>
 <div class="page-content">
 <section class="row">

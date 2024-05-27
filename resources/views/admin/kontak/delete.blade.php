@@ -14,7 +14,7 @@ aria-labelledby="deleteKontakModalTitle" aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-          <form action="{{ url('kontak/'.$item->id) }}" method="POST">
+          <form action="{{ url('admin/kontak/'.$item->id) }}" method="POST">
             @method('DELETE')
             @csrf
             <p>

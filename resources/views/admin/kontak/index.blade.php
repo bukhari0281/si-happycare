@@ -10,7 +10,7 @@
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ url('dashboard') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Kontak</li>
                     </ol>
                 </nav>
@@ -21,7 +21,7 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <a class="btn btn-outline-primary block float-end" href="{{ url('kontak/create') }}">
+                <a class="btn btn-outline-primary block float-end" href="{{ url('admin/kontak/create') }}">
                         Tambah Kontak
                 </a>
 
@@ -59,7 +59,7 @@
                                             <td>Wisata {{ $alt->touristDestination->name }}</td>
                                         @endif
                                         <td>
-                                                <a href="{{ url("kontak/$alt->id/edit") }}" class="btn btn-secondary block">Edit</a>
+                                                <a href="{{ url("admin/kontak/$alt->id/edit") }}" class="btn btn-secondary block">Edit</a>
                                                 <button data-bs-toggle="modal" data-bs-target="#deleteKontakModal{{ $alt->id }}" class="btn btn-danger block">Hapus</button>
                                         </td>
                                     </tr>

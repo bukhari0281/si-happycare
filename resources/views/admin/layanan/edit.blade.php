@@ -8,7 +8,7 @@
         <div class="col-12 col-md-6 order-md-2 order-first">
             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('layanan') }}">Layanan</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('admin/layanan') }}">Layanan</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Form Layout</li>
                 </ol>
             </nav>
@@ -33,7 +33,7 @@
          </div>
          <div class="card-content">
              <div class="card-body">
-                 <form action="{{ url('layanan/'.$items->id) }}" method="POST" class="form form-horizontal" enctype="multipart/form-data">
+                 <form action="{{ url('admin/layanan/'.$items->id) }}" method="POST" class="form form-horizontal" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
                     <div class="form-body">
