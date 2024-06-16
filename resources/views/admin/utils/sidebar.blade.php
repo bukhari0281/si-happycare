@@ -217,30 +217,28 @@
                 </li>
 
                 <li class="sidebar-item has-sub">
-                    <a href="{{ url('admin/bahasa') }}" class='sidebar-link'>
+                    <a href="{{ route('bahasa.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-font-fill"></i>
                         <span>Bahasa</span>
                     </a>
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/bahasa') }}" class="submenu-link">Daftar Bahasa</a>
+                            <a href="{{ route('bahasa.index') }}" class="submenu-link">Daftar Bahasa</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/bahasa/create') }}" class="submenu-link">Tambah</a>
+                            <a href="{{ route('bahasa.create') }}" class="submenu-link">Tambah</a>
                         </li>
 
                     </ul>
                 </li>
 
                 <li class="sidebar-item">
-                    <a href="{{ url('auth/logout') }}" class='sidebar-link'>
+                    <a href="{{ url('logout') }}" class='sidebar-link'>
                         <i class="bi bi-file-font-fill"></i>
                         <span>Logout</span>
                     </a>
                 </li>
-
-
         </div>
     </div>
 </div>

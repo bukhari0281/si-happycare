@@ -10,24 +10,8 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     public function index(){
-        // kita ambil data user lalu simpan pada variable $user
-         $user = Auth::user();
-         // kondisi jika user nya ada
-         if($user){
-             // jika user nya memiliki level admin
-             if($user->level =='admin'){
-                  // arahkan ke halaman admin ya :P
-                 return redirect()->intended('admin');
-             }
-               // jika user nya memiliki level user
-             else if($user->level =='user'){
-                // arahkan ke halaman user
-                 return redirect()->intended('user');
-             }
-
-         }
          return view('admin.auth.login');
-      }
+    }
      //
     public function proses_login(Request $request){
             // kita buat validasi pada saat tombol login di klik
@@ -35,6 +19,9 @@ class AuthController extends Controller
             $request->validate([
                 'username'=>'required',
                 'password'=>'required'
+            ],[
+                'username.required'=>'Username wajib diisi',
+                'password.required'=>'Password wajib diisi'
             ]);
 
 
@@ -43,26 +30,19 @@ class AuthController extends Controller
 
             // cek jika data username dan password valid (sesuai) dengan data
             if(Auth::attempt($credential)){
-                // kalau berhasil simpan data user ya di variabel $user
-                $user =  Auth::user();
-                // cek lagi jika level user admin maka arahkan ke halaman admin
-                if($user->level =='admin'){
-                    return redirect()->intended('admin');
-
+                if(Auth::user()->role == 'admin'){
+                    return redirect('admin');
+                } elseif (Auth::user()->role == 'pl_kesehatan') {
+                    return redirect('/admin/kesehatan');
+                    // echo ("oke");
+                } elseif (Auth::user()->role == 'pl_wisata') {
+                    return redirect('admin');
+                } elseif (Auth::user()->role == 'user') {
+                    return redirect('admin');
                 }
-                    // tapi jika level user nya user biasa maka arahkan ke halaman user
-                    else if($user->level =='user'){
-                    return redirect()->intended('user');
-                }
-                // jika belum ada role maka ke halaman /
-                return redirect()->intended('/');
+            }else{
+                return redirect('login')->withErrors('Username dan password yang dimasukkan salah')->withInput();
             }
-
-                // jika ga ada data user yang valid maka kembalikan lagi ke halaman login
-                // pastikan kirim pesan error juga kalau login gagal ya
-            return redirect('login')
-             ->withInput()
-             ->withErrors(['login_gagal'=>'These credentials does not match our records']);
       }
 
     public function register(){
