@@ -11,7 +11,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center" >
     <div class="container">
-      <h1 class="text-primary">Welcome to Medilab</h1>
+      <h1 class="text-primary">Welcome to HappyCare</h1>
       <h2>We are team of talented designers making websites with Bootstrap</h2>
       <form action="{{ url('faskes/search') }}" class="my-3" method="POST">
         @csrf

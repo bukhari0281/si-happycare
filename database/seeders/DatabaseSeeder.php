@@ -8,6 +8,7 @@ use App\Models\Bahasa;
 use App\Models\City;
 use App\Models\Contact;
 use App\Models\FaskesKategori;
+use App\Models\Gallery;
 use App\Models\HealthDestination;
 use App\Models\Service;
 use App\Models\tourist_destination;
@@ -37,14 +38,15 @@ class DatabaseSeeder extends Seeder
         //     WisataKategoriSeeder::class,  // --> 2
         //     // ServiceSeeder::class,  // --> 2
         //     LanguageSeeder::class,  // --> 2
+        //     AkunSeeder::class,  // --> 2
         // ]);
 
-        // HealthDestination::factory(10)
-        //         ->create(); // --> 3
+        // HealthDestination::factory(10)->create(); // --> 3
         // tourist_destination::factory(10)->create(); // --> 3
-        Contact::factory(10)->create(); // --> 4
-        // Service::factory(20)->create(); // --> 5
+        // Contact::factory(10)->create(); // --> 4
+        // Service::factory(10)->create(); // --> 5
         // Bahasa::factory(10)->create(); // --> 6
+        Gallery::factory(10)->create(); // --> 7
 
 
     }

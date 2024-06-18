@@ -52,6 +52,7 @@
                             @if($item->galeri->isNotEmpty())
                             <div class="blog-img-inner">
                                 <img class="img-fluid w-100 rounded-top" src="{{ asset('storage/gallery/'.$item->galeri->first()->url) }}" alt="Image">
+                                {{-- <img class="img-fluid w-100 rounded-top" src="{{ $item->url }}" alt="Image"> --}}
                             </div>
                             @else
                                 <div class="blog-img-inner">
