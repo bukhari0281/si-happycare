@@ -33,8 +33,8 @@ class AuthController extends Controller
                 if(Auth::user()->role == 'admin'){
                     return redirect('admin');
                 } elseif (Auth::user()->role == 'pl_kesehatan') {
-                    return redirect('/admin/kesehatan');
-                    // echo ("oke");
+                    // return redirect('/admin/kesehatan');
+                    echo ("oke");
                 } elseif (Auth::user()->role == 'pl_wisata') {
                     return redirect('admin');
                 } elseif (Auth::user()->role == 'user') {

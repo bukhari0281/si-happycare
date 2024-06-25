@@ -11,8 +11,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center" >
     <div class="container">
-      <h1 class="text-primary">Welcome to HappyCare</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <h1 class="text-primary">Selamat Datang di HappyCare</h1>
+      <h2>Website Penyedia Fasilitas Wisata Kesehatan Wilayah Jawa Tengah</h2>
       <form action="{{ url('faskes/search') }}" class="my-3" method="POST">
         @csrf
         <div class="form-body">
@@ -36,10 +36,10 @@
         <div class="row">
         <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
-            <h3>Why Choose Medilab?</h3>
+            <h3>Mengapa Memilih HappyCare?</h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+            Happy Care adalah platform online yang didedikasikan untuk memfasilitasi wisata kesehatan di wilayah Jawa Tengah.
+            Kami menyediakan berbagai fitur yang dirancang untuk membantu pasien dalam mencari perawatan medis yang sesuai dengan kebutuhan mereka.
             </p>
             <div class="text-center">
                 <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
