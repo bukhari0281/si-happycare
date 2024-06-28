@@ -33,7 +33,7 @@ Route::get('/faskes', [ClientController::class, 'faskes'])->name('faskes'); // f
 Route::get('/faskes/{id}', [ClientController::class, 'show_faskes'])->name('show_faskes'); // detail faskes
 Route::get('/wisata', [ClientController::class, 'wisata'])->name('wisata'); // wisata
 Route::get('/wisata/{id}', [ClientController::class, 'detail_wisata'])->name('detail_wisata'); // detail wisata
-Route::get('logout', [AuthController::class,'logout'])->name('logout');
+Route::get('/logout', [AuthController::class,'logout'])->name('logout');
 
 Route::get('/home', function () {
     return redirect('/admin');

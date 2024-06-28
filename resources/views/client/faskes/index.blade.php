@@ -35,7 +35,7 @@
 <!-- Blog Start -->
 <div id="faskes" class="container-fluid blog pb-5">
     <div class="container pb-5">
-        {{-- <div class="mx-auto text-center mb-5" style="max-width: 900px; height: 30vh">
+        {{-- <div class="mx-auto text-center mb-5" style="max-width: 900px; height: 50vh">
             <h5 class="section-title px-3">FasKes</h5>
             <h1 class="mb-4">Fasilitas Kesehatan</h1>
             <p class="mb-0">
@@ -72,11 +72,9 @@
                 </div>
             </div>
             @endforeach
-
         </div>
 
         {{ $latest_faskes->links() }}
-
     </div>
 </div>
 <!-- Blog End -->

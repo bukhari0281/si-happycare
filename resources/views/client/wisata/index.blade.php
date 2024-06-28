@@ -69,7 +69,7 @@
                                 <p> <i class="fa fa-calendar-alt text-primary me-2 mb-2"></i>Data Kosong </p>
                             @endif
                         </div>
-                        <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                        <a href="{{ url('wisata/'.$item->name) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
                     </div>
                 </div>
             </div>

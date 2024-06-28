@@ -66,6 +66,7 @@ class ClientController extends Controller
     }
     public function detail_wisata() // DETAIL WISATA
     {
-        return view('client.wisata.show');
+        $data = tourist_destination::with('wisataKategori', 'bahasa', 'kontak', 'galeri')->first();
+        return view('client.wisata.show', compact('data'));
     }
 }
