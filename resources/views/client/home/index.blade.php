@@ -11,8 +11,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center" >
     <div class="container">
-      <h1 class="text-primary">Selamat Datang di HappyCare</h1>
-      <h2>Website Penyedia Fasilitas Wisata Kesehatan Wilayah Jawa Tengah</h2>
+      <h1 class="text-primary">Welcome To HappyCare</h1>
+      <h2>Website of Health Tourism Facilities Provider in Central Java Region</h2>
       <form action="{{ url('faskes/search') }}" class="my-3" method="POST">
         @csrf
         <div class="form-body">
@@ -36,10 +36,10 @@
         <div class="row">
         <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
-            <h3>Mengapa Memilih HappyCare?</h3>
+            <h3>Why Choose HappyCare??</h3>
             <p>
-            Happy Care adalah platform online yang didedikasikan untuk memfasilitasi wisata kesehatan di wilayah Jawa Tengah.
-            Kami menyediakan berbagai fitur yang dirancang untuk membantu pasien dalam mencari perawatan medis yang sesuai dengan kebutuhan mereka.
+            Happy Care is an online platform dedicated to facilitating health tourism in the Central Java region.
+            We provide various features designed to assist patients in finding medical care that suits their needs.
             </p>
             <div class="text-center">
                 <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>

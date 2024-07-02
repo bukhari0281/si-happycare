@@ -9,10 +9,10 @@
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <ol class="breadcrumb">
+                    <!-- <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('index_dashboard') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Bahasa</li>
-                    </ol>
+                    </ol> -->
                 </nav>
             </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card-header">
                 {{-- <a class="btn btn-outline-primary block" href="{{ url('bahasa/create') }}">
-                        Tambah Bahasa
+                        Tambah Data
                 </a> --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">

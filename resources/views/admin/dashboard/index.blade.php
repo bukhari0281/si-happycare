@@ -2,12 +2,12 @@
 @section('content')
 
 <div class="page-heading">
-<h3>Profile Statistics</h3>
-<h3>Selamat datang <span class="text-primary">{{ Auth::user()->name }}</span> sebagai <span class="text-secondary">{{ Auth::user()->level }}</span></h1></h3>
+<h3>Dashboard</h3>
+<h3>Selamat datang <span class="text-primary">{{ Auth::user()->name }}</h1></h3>
 </div>
 <div class="page-content">
 <section class="row">
-<div class="col-12 col-lg-9">
+<div class="col-lg-12">
 <div class="row">
     <div class="col-6 col-lg-3 col-md-6">
         <div class="card">
@@ -44,38 +44,42 @@
         </div>
     </div>
     <div class="col-6 col-lg-3 col-md-6">
-        <div class="card">
-            <div class="card-body px-4 py-4-5">
-                <div class="row">
-                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                        <div class="stats-icon green mb-2">
-                            <i class="iconly-boldAdd-User"></i>
+        <a href="{{ url('admin/health-destination/create') }}" class="">
+            <div class="card">
+                <div class="card-body px-4 py-4-5">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                            <div class="stats-icon green mb-2">
+                                <i class="iconly-boldAdd-User"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                        <h6 class="text-muted font-semibold">Total Reservasi</h6>
-                        <h6 class="font-extrabold mb-0">80.000</h6>
+                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                            <h6 class="text-muted font-semibold">Tambah</h6>
+                            <h6 class="font-extrabold mb-0">Destinasi Kesehatan</h6>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="col-6 col-lg-3 col-md-6">
-        <div class="card">
-            <div class="card-body px-4 py-4-5">
-                <div class="row">
-                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                        <div class="stats-icon red mb-2">
-                            <i class="iconly-boldBookmark"></i>
+        <a href="{{ url('admin/tourist-destination/create') }}" class="">
+            <div class="card">
+                <div class="card-body px-4 py-4-5">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                            <div class="stats-icon red mb-2">
+                                <i class="iconly-boldBookmark"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                        <h6 class="text-muted font-semibold">Post Disukai</h6>
-                        <h6 class="font-extrabold mb-0">112</h6>
+                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                            <h6 class="text-muted font-semibold">Tambah</h6>
+                            <h6 class="font-extrabold mb-0">Destinasi Wisata</h6>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 <div class="row">
@@ -102,7 +106,7 @@
                                     </div>
                                 </td>
                                 <td class="col-auto">
-                                    <p class=" mb-0">{{ $value->description }}</p>
+                                    <p class="mb-0 text-truncate" style="max-width: 500px;" >{{ $value->description }}</p>
                                 </td>
                             </tr>
 
@@ -143,8 +147,8 @@
                                         <p class="font-bold ms-3 mb-0">{{ $value->name }}</p>
                                     </div>
                                 </td>
-                                <td class="col-auto">
-                                    <p class=" mb-0">{{ $value->description }}</p>
+                                <td class="">
+                                    <p class="mb-0 text-truncate" style="max-width: 500px;">{{ $value->description }}</p>
                                 </td>
                             </tr>
 
@@ -166,7 +170,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-12 col-xl-4">
         <div class="card">
             <div class="card-header">
@@ -382,8 +386,8 @@
     <div class="card-body">
         <div id="chart-visitors-profile"></div>
     </div>
-</div>
-</div>
+</div> -->
+<!-- </div> -->
 </section>
 </div>
 @endsection

@@ -10,8 +10,10 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ url('Medilab/assets/img/favicon.png') }}" rel="icon">
-  <link href="{{ url('Medilab/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <!-- <link href="{{ url('Medilab/assets/img/favicon.png') }}" rel="icon"> -->
+  <link rel="shortcut icon" href="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2034'%20fill-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%20xmlns:v='https://vecta.io/nano'%3e%3cpath%20d='M3%2027.472c0%204.409%206.18%205.552%2013.5%205.552%207.281%200%2013.5-1.103%2013.5-5.513s-6.179-5.552-13.5-5.552c-7.281%200-13.5%201.103-13.5%205.513z'%20fill='%23435ebe'%20fill-rule='nonzero'/%3e%3ccircle%20cx='16.5'%20cy='8.8'%20r='8.8'%20fill='%2341bbdd'/%3e%3c/svg%3e" type="image/x-icon">
+
+  <!-- <link href="{{ url('Medilab/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> -->
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">

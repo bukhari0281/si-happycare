@@ -104,7 +104,7 @@ class LayananController extends Controller
         ];
 
         Service::find($id)->update($items);
-        return redirect(url('layanan'))->with('success', 'Berhasil mengubah data');
+        return redirect(url('admin/layanan'))->with('success', 'Berhasil mengubah data');
     }
 
     /**

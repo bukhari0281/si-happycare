@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="{{ route('index_dashboard') }}">
+                    <a href="{{ url('admin') }}">
                         <h4>HappyCare</h4>
                     </a>
                 </div>
@@ -35,7 +35,7 @@
                         </path>
                     </svg>
                 </div>
-                <div class="sidebar-toggler  x">
+                <div class="sidebar-toggler x">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                 </div>
             </div>
@@ -44,14 +44,14 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item active">
-                    <a href="{{ route('index_dashboard') }}" class='sidebar-link'>
+                <li class="sidebar-item">
+                    <a href="{{ url('admin') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item  has-sub">
+                <!-- <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-person-circle"></i>
                         <span>Account</span>
@@ -68,9 +68,9 @@
                     </ul>
 
 
-                </li>
+                </li> -->
 
-                <li class="sidebar-item  has-sub">
+                <!-- <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-person-badge-fill"></i>
                         <span>Authentication</span>
@@ -91,17 +91,17 @@
 
                 </li>
 
-                <li class="sidebar-title">VALIDASI RESERVASI</li>
+                <li class="sidebar-title">VALIDASI RESERVASI</li> -->
 
-                <li
+                <!-- <li
                     class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-journal-check"></i>
                         <span>Reservasi</span>
                     </a>
-                </li>
+                </li> -->
 
-                <li class="sidebar-title">DATA DESTINASI</li>
+                <!-- <li class="sidebar-title">DATA DESTINASI</li> -->
 
                 <li class="sidebar-item  has-sub">
                     <a href="{{ url('admin/form-utama') }}" class='sidebar-link'>
@@ -226,17 +226,17 @@
                     <ul class="submenu ">
 
                         <li class="submenu-item  ">
-                            <a href="{{ route('bahasa.index') }}" class="submenu-link">Daftar Bahasa</a>
+                            <a href="{{ url('admin/bahasa/') }}" class="submenu-link">Daftar Bahasa</a>
                         </li>
-                        <li class="submenu-item  ">
-                            <a href="{{ route('bahasa.create') }}" class="submenu-link">Tambah</a>
-                        </li>
+                        <!-- <li class="submenu-item  ">
+                            <a href="{{ url('admin/bahasa/create') }}" class="submenu-link">Tambah</a>
+                        </li> -->
 
                     </ul>
                 </li>
 
                 <li class="sidebar-item">
-                    <a href="{{ route('logout') }}" class='sidebar-link'>
+                    <a href="{{ url('admin/logout') }}" class='sidebar-link'>
                         <i class="bi bi-file-font-fill"></i>
                         <span>Logout</span>
                     </a>

@@ -44,7 +44,7 @@
     </div>
 </section>
 
-<div class="container mb-5" style="height: 500px;">
+<div class="container mb-5">
     <div class="card-body">
         <h4>Deskripsi</h4>
         <p>{{ $data->description }}</p>

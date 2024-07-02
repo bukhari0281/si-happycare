@@ -13,8 +13,8 @@ class DashboardController extends Controller
     {
         $total_wisata = tourist_destination::count();
         $total_faskes = HealthDestination::count();
-        $faskes = HealthDestination::get();
-        $wisata = tourist_destination::get();
+        $faskes = HealthDestination::latest()->paginate(5);
+        $wisata = tourist_destination::latest()->paginate(5);
         return view('admin.dashboard.index', compact('total_wisata', 'total_faskes', 'faskes', 'wisata'));
     }
 

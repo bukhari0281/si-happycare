@@ -9,10 +9,10 @@
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <ol class="breadcrumb">
+                    <!-- <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ url('admin/health-destination') }}">Health Destination</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Tempat</li>
-                    </ol>
+                    </ol> -->
                 </nav>
             </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card-header">
                 <a class="btn btn-outline-primary block float-end" href="{{ url('admin/health-destination/create') }}">
-                        Tambah Layanan
+                        Tambah Data
                 </a>
 
             </div>
@@ -51,13 +51,13 @@
                                     <input type="hidden" class="id" value="{{ $alt->id }}">
                                     <td>{{ $i }}</td>
                                     <td>{{ $alt->name }}</td>
-                                    <td>{{ $alt->description }}</td>
+                                    <td class="mb-0 text-truncate" style="max-width: 200px;">{{ $alt->description }}</td>
                                     <td>{{ $alt->faskesKategori->name }}</td>
                                     <td>{{ implode(', ', $alt->bahasa->pluck('name')->toArray()) }}</td>
                                     <td>
-                                          <a href="{{ url("admin/health-destination/$alt->id") }}" class="btn btn-primary block">Detail</a>
-                                          <a href="{{ url("admin/health-destination/$alt->id/edit") }}" class="btn btn-secondary block">Edit</a>
-                                          <button data-bs-toggle="modal" data-bs-target="#deleteHDModal{{ $alt->id }}" class="btn btn-danger block">Hapus</button>
+                                          <a href="{{ url("admin/health-destination/$alt->id") }}" class="btn btn-primary block btn-sm">Detail</a>
+                                          <a href="{{ url("admin/health-destination/$alt->id/edit") }}" class="btn btn-secondary block btn-sm">Edit</a>
+                                          <button data-bs-toggle="modal" data-bs-target="#deleteHDModal{{ $alt->id }}" class="btn btn-danger block btn-sm">Hapus</button>
                                     </td>
                                 </tr>
                                 <?php $i++; ?>
