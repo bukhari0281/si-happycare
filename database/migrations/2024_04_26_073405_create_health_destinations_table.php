@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("name");
             $table->longText("description");
             $table->foreignId("faskes_kategori_id")->constrained("faskes_kategoris");
-
+            
             $table->softDeletes();
             $table->timestamps();
         });

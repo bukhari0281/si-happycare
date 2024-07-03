@@ -54,12 +54,20 @@
                                  <label for="faskes_kategori_id">Kategori Faskes</label>
                              </div>
                              <div class="col-md-8 form-group">
-                                 <select class="form-control" id="faskes_kategori_id"  name="faskes_kategori_id" >
+                                 <!-- <select class="form-control" id="faskes_kategori_id"  name="faskes_kategori_id" >
                                      <option value="" hidden>-- Pilih --</option>
                                      @foreach ($faskesKategori as $item)
                                          <option value="{{ $item->id }}">{{ $item->name }}</option>
                                      @endforeach
-                                 </select>
+                                 </select> -->
+                                 <select class="form-control" id="faskes_kategori_id" name="faskes_kategori_id">
+                                    <option value="" hidden>-- Pilih --</option>
+                                    @foreach ($faskesKategori as $item)
+                                        <option value="{{ $item->id }}" {{ ($item->name == 'Hospital') ? 'selected' : '' }}>
+                                            {{ $item->name }}
+                                        </option>
+                                    @endforeach
+                                </select>   
                              </div>
                              <div class="col-md-4">
                                 <label for="bahasa_id">Bahasa yang digunakan</label>

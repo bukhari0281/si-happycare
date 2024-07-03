@@ -64,8 +64,12 @@
                     <div class="blog-content border border-top-0 rounded-bottom p-4">
                         <div class="d-flex flex-column">
                             <a href="{{ url('faskes/'.$item->name) }}" class="h4 mb-3">{{ $item->name }}</a>
-                            <p> <i class="fa fa-calendar-alt text-primary me-2 mb-0"></i>{{ $item->kontak->address }} </p>
-                            <p> <i class="fa fa-calendar-alt text-primary me-2 mb-2"></i>{{ $item->kontak->phone }} </p>
+                            @if ($item->kontak) 
+                                <p> <i class="fa fa-map-marker-alt text-primary me-2 mb-0"></i>{{ $item->kontak->address }} </p>
+                                <p> <i class="fa fa-phone text-primary me-2 mb-2"></i>{{ $item->kontak->phone }} </p>
+                            @else
+                                <p> <i class="text-primary me-2 mb-2"></i>Data Kontak Belum Tersedia</p>
+                            @endif
                         </div>
                         <a href="{{ url('faskes/'.$item->name) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
                     </div>

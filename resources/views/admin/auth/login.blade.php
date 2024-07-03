@@ -36,7 +36,7 @@
                         @endif --}}
                         <div class="card-header">
                             <div class="text-center">
-                                <img src="{{ asset('image/library.png')}}" class="img-responsive img-body">
+                                <img src="{{ asset('storage/gallery/logo.png')}}" class="img-responsive img-body" width="100">
                             </div>
 
                             <h3 class="text-center font-weight-light my-4">Login</h3>

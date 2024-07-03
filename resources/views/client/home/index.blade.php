@@ -52,22 +52,22 @@
                 <div class="col-xl-4 d-flex align-items-stretch">
                 <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h2>250+</h2>
+                    <p>Specialzation & Subspetialties</p>
                 </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                 <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <h2>300+</h2>
+                    <p>Test Laboratory</p>
                 </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                 <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h2>150+</h2>
+                    <p>Examination Radiology</p>
                 </div>
                 </div>
             </div>
@@ -84,37 +84,31 @@
 
     <div class="row">
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-4 col-md-6">
         <div class="count-box">
         <i class="fas fa-user-md"></i>
-        <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
-        <p>Doctors</p>
+        <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1" class="purecounter"></span>
+        <p>Medical Personel</p>
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+    <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
         <div class="count-box">
         <i class="far fa-hospital"></i>
-        <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
-        <p>Departments</p>
+        <span data-purecounter-start="0" data-purecounter-end="350" data-purecounter-duration="1" class="purecounter"></span>
+        <p>Central Java Hospital</p>
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+    <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
         <div class="count-box">
         <i class="fas fa-flask"></i>
-        <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
-        <p>Research Labs</p>
+        <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1" class="purecounter"></span>
+        <p>Tourist Visit</p>
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-        <div class="count-box">
-        <i class="fas fa-award"></i>
-        <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
-        <p>Awards</p>
-        </div>
-    </div>
+
 
     </div>
 
