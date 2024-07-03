@@ -3,7 +3,7 @@
 
 <style>
     #jumbotron {
-        margin-top: 100px;
+        margin-top: 0;
         background-color: #e7f3ff
     }
 
@@ -46,23 +46,27 @@
 
 <div class="container mb-5">
     <div class="card-body">
-        <h4>Deskripsi</h4>
+        <h4>Description</h4>
         <p>{{ $data->description }}</p>
-        <h4>Wisata Faskes</h4>
+        <h4>Category Destination</h4>
         <p>{{ $data->wisataKategori->name }}</p>
         <!-- <h4>Layanan yang disediakan</h4>  -->
-        <h4>Bahasa yang tersedia</h4>
+        <h4>Available Languages</h4>
         <ul>
             @foreach($data->bahasa as $b)
                 <li>{{ $b->name }}</li>
             @endforeach
         </ul>
-        <h4>Kontak</h4>
+        <h4>Contact</h4>
         <ul>
-            <li> {{ $data->kontak->email }} </li>
-            <li> {{ $data->kontak->city->name }} </li>
-            <li> {{ $data->kontak->address }} </li>
-            <li> {{ $data->kontak->phone }} </li>
+            @if ($data->kontak) 
+                <!-- <p> <i class="fa fa-map-marker-alt text-primary me-2 mb-0"></i>{{ $item->kontak->address }} </p>
+                <p> <i class="fa fa-phone text-primary me-2 mb-2"></i>{{ $item->kontak->phone }} </p> -->
+                <li> {{ $data->kontak->email }} </li>
+                <li> {{ $data->kontak->city->name }} </li>
+                <li> {{ $data->kontak->address }} </li>
+                <li> {{ $data->kontak->phone }} </li> 
+            @endif 
         </ul>
     </div>
 </div>

@@ -63,10 +63,13 @@
                     </ul>
                     <h4>Kontak</h4>
                     <ul>
-                        <li> {{ $items->kontak->email }} </li>
-                        <li> {{ $items->kontak->city->name }} </li>
-                        <li> {{ $items->kontak->address }} </li>
-                        <li> {{ $items->kontak->phone }} </li>
+                        @if ($items->kontak) 
+                                
+                                <li> {{ $items->kontak->email }} </li>
+                                <li> {{ $items->kontak->city->name }} </li>
+                                <li> {{ $items->kontak->address }} </li>
+                                <li> {{ $items->kontak->phone }} </li>
+                        @endif
                     </ul>
                 </div>
                 </div>

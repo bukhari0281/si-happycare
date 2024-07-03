@@ -164,16 +164,17 @@ h6 {
 --------------------------------------------------------------*/
 #header {
   background: #fff;
-  transition: all 0.5s;
-  z-index: 997;
+  position: fixed;
+  /* transition: all 0.5s; */
+  /* z-index: 997; */
   padding: 15px 0;
-  top: 40px;
+  top: 0;
   box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
 }
 
-#header.header-scrolled {
+/* #header.header-scrolled {
   top: 0;
-}
+} */
 
 #header .logo {
   font-size: 30px;
@@ -1337,9 +1338,12 @@ section {
 
 /*--------------------------------------------------------------
 # Testimonials
---------------------------------------------------------------*/
+--------------------------------------------------------------*/ 
+
 .testimonials .testimonial-wrap {
   padding-left: 50px;
+  background-color: #badaf7;
+
 }
 
 .testimonials .testimonials-carousel,

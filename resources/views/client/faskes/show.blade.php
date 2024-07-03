@@ -3,7 +3,7 @@
 
 <style>
     #jumbotron {
-        margin-top: 100px;
+        margin-top: 0;
         background-color: #e7f3ff
     }
 
@@ -56,18 +56,20 @@
                 <li>{{ $service->name }}</li>
             @endforeach
         </ul>
-        <h4>Bahasa yang tersedia</h4>
+        <h4>Available Languages</h4>
         <ul>
             @foreach($data->bahasa as $b)
                 <li>{{ $b->name }}</li>
             @endforeach
         </ul>
-        <h4>Kontak</h4>
+        <h4>Contact</h4>
         <ul>
-            <li> {{ $data->kontak->email }} </li>
-            <li> {{ $data->kontak->city->name }} </li>
-            <li> {{ $data->kontak->address }} </li>
-            <li> {{ $data->kontak->phone }} </li>
+            @if ($data->kontak)
+                <li> {{ $data->kontak->email }} </li>
+                <li> {{ $data->kontak->city->name }} </li>
+                <li> {{ $data->kontak->address }} </li>
+                <li> {{ $data->kontak->phone }} </li>
+            @endif
         </ul>
     </div>
 </div>

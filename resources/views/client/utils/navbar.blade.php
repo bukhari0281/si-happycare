@@ -1,24 +1,10 @@
-<!-- ======= Top Bar ======= -->
-<div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">admin@happycare.com</a>
-        <i class="bi bi-phone"></i> <a href="https://wa.me/6282211592439" target="blank">+62-8221-1592-439</a>
-      </div>
-      <div class="d-none d-lg-flex social-links align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </div>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
+  <header id="header" class="">
     <div class="container d-flex align-items-center">
-
-      <h1 class="logo me-auto"><a href="{{ url('') }}">HappyCare</a></h1>
+      <h1 class="logo me-auto" >
+      <img src="{{ asset('storage/gallery/logo.png') }}" alt="">  
+      <a href="{{ url('') }}">HappyCare</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -55,4 +41,32 @@
       <!-- <a href="{{ route('login') }}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Login</span></a> -->
 
     </div>
+    <div id="topbar" class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">admin@happycare.com</a>
+        <i class="bi bi-phone"></i> <a href="https://wa.me/6282211592439" target="blank">+62-8221-1592-439</a>
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>  
+    <!-- ======= Top Bar ======= -->
+    <!-- <div id="topbar" class="d-flex align-items-center fixed-top">
+      <div class="container d-flex justify-content-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">admin@happycare.com</a>
+          <i class="bi bi-phone"></i> <a href="https://wa.me/6282211592439" target="blank">+62-8221-1592-439</a>
+        </div>
+        <div class="d-none d-lg-flex social-links align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        </div>
+      </div>
+    </div> -->
   </header><!-- End Header -->
+

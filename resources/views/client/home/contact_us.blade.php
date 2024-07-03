@@ -4,7 +4,7 @@
 <!-- ======= Hero Section ======= -->
 <style>
     #jumbotron {
-        margin-top: 100px;
+        margin-top: 0;
         background-color: #e7f3ff
     }
 
