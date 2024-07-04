@@ -1,6 +1,6 @@
 
   <!-- ======= Header ======= -->
-  <header id="header" class="">
+  <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo me-auto" >
       <img src="{{ asset('storage/gallery/logo.png') }}" alt="">  
