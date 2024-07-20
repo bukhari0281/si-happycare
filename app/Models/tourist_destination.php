@@ -32,4 +32,14 @@ class tourist_destination extends Model
     {
         return $this->hasMany(Gallery::class);
     }
+
+    public function Fasilitas()
+    {
+        return $this->hasMany(Facility::class);
+    }
+
+    public function Layanan()
+    {
+        return $this->hasMany(Service::class);
+    }   
 }

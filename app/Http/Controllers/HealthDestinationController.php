@@ -91,6 +91,9 @@ class HealthDestinationController extends Controller
     public function destroy(string $id)
     {
         $hd = HealthDestination::findOrFail($id);
+        $hd->Fasilitas()->delete();
+        $hd->galeri()->delete();
+        $hd->kontak()->delete();
         $hd->Layanan()->delete();
         $hd->bahasa()->detach();
         $hd->delete();

@@ -44,7 +44,7 @@
     </div>
 </section>
 
-<div class="container mb-5"">
+<div class="container mb-5">
     <div class="card-body">
         <h4>Deskripsi</h4>
         <p>{{ $data->description }}</p>
@@ -63,7 +63,7 @@
             @endforeach
         </ul>
         <h4>Contact</h4>
-        <ul>
+        <ul class="my-5">
             @if ($data->kontak)
                 <li> {{ $data->kontak->email }} </li>
                 <li> {{ $data->kontak->city->name }} </li>

@@ -15,7 +15,7 @@
             Kec. Gamping, Kabupaten Sleman, Daerah
             Istimewa Yogyakarta 55292<br><br>
               <strong>Phone: </strong><a href="https://wa.me/6282211592439" target="blank">+6282211592439</a><br>
-              <strong>Email: </strong> admin@happycare.com<br>
+              <strong>Email: </strong><a href="mailto:walkercfarhan@gmail.com">walkercfarhan@gmail.com</a><br>
             </p>
           </div>
 

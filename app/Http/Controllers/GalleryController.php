@@ -98,6 +98,15 @@ class GalleryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $gallery = Gallery::findOrFail($id);
+
+        // Delete the image file from storage before deleting the record (optional)
+        if (Storage::disk('public')->exists('gallery/' . $gallery->url)) {
+            Storage::disk('public')->delete('gallery/' . $gallery->url);
+        }
+
+        $gallery->delete();
+
+        return back()->with('success', 'Berhasil menghapus data');
     }
 }

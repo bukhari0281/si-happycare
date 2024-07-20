@@ -32,4 +32,9 @@ class HealthDestination extends Model
     {
         return $this->hasOne(Contact::class);
     }
+
+    public function Fasilitas()
+    {
+        return $this->hasOne(Facility::class);
+    }
 }

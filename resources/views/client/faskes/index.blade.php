@@ -22,10 +22,10 @@
     <div class="container">
         <div class="row justify-content-center align-items-center" style="height: 400px;">
             <div class="col-12">
-                <h1 class="mb-4 text-4xl">Fasilitas Kesehatan <span class="text-primary">Happycare</span></h1>
+                <h1 class="mb-4 text-4xl">Happycare <span class="text-primary">HEALTH FACILITY</span></h1>
                 <p class="mb-0">
-                    Indonesia memiliki banyak <span class="text-primary">fasilitas kesehatan</span>
-                    yang dapat digunakan sebagai pilihan utama anda.
+                    Indonesia has many <span class="text-primary">healthcare facilities</span>
+                    that can be used as your primary choice.
                 </p>
             </div>
         </div>

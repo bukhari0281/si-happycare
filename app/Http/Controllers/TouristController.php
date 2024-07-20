@@ -95,6 +95,11 @@ class TouristController extends Controller
     public function destroy(string $id)
     {
         $hd = tourist_destination::findOrFail($id);
+        $hd->layanan()->delete();
+        $hd->Fasilitas()->delete();
+        $hd->galeri()->delete();
+        $hd->Layanan()->delete();
+        $hd->kontak()->delete();
         $hd->bahasa()->detach();
         $hd->delete();
 

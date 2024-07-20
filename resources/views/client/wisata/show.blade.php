@@ -59,9 +59,7 @@
         </ul>
         <h4>Contact</h4>
         <ul>
-            @if ($data->kontak) 
-                <!-- <p> <i class="fa fa-map-marker-alt text-primary me-2 mb-0"></i>{{ $item->kontak->address }} </p>
-                <p> <i class="fa fa-phone text-primary me-2 mb-2"></i>{{ $item->kontak->phone }} </p> -->
+            @if ($data->kontak)
                 <li> {{ $data->kontak->email }} </li>
                 <li> {{ $data->kontak->city->name }} </li>
                 <li> {{ $data->kontak->address }} </li>

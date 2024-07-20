@@ -63,7 +63,7 @@ class KontakController extends Controller
 
         Contact::create($items);
 
-        return redirect(url('kontak'))->with('success', 'Berhasil menambahkan data');
+        return redirect(url('admin/kontak'))->with('success', 'Berhasil menambahkan data');
     }
 
     /**

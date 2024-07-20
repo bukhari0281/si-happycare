@@ -97,7 +97,7 @@
 
         <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start">
-            <div class="pic"><img src="{{ asset('storage/gallery/icon_user.png') }}" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{ asset('storage/gallery/user woman.png') }}" class="img-fluid" alt=""></div>
             <div class="member-info">
                 <h4>Umi Zakiyah/2211501042</h4>
                 <span>Needs Analysis</span>
@@ -173,10 +173,10 @@
                 <p>Conduct thorough testing of the website to ensure its quality and report bugs, defects, and other problems if they occur.
                 </p>
                 <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                <a href="https://wa.me/6282211592439" target="blank"><i class="ri-twitter-fill"></i></a>
+                <a href="https://wa.me/6282211592439" target="blank"><i class="ri-facebook-fill"></i></a>
+                <a href="https://wa.me/6282211592439" target="blank"><i class="ri-instagram-fill"></i></a>
+                <a href="https://wa.me/6282211592439" target="blank"> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
             </div>
             </div>

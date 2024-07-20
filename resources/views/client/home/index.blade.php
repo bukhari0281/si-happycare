@@ -46,7 +46,7 @@
             We provide various features designed to assist patients in finding medical care that suits their needs.
             </p>
             <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                <a href="{{ url('about-us') }}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
             </div>
             </div>
         </div>
@@ -125,55 +125,62 @@
 
     <div class="section-title">
     <h2>Hospital Recommendations</h2>
-    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+    <p>We understand how important it is to choose the right healthcare facility for you and your family. We are your trusted source for information and guidance on hospitals and healthcare services near you. Whether you're looking for ratings and reviews of nearby hospitals, or want to know which specialists are available for a particular health condition, we're here to help.</p>
     </div>
 
     <div class="row">
-    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-5">
         <div class="icon-box">
-        <div class="icon"><i class="fas fa-heartbeat"></i></div>
-        <h4><a href="">Hospital 1</a></h4>
-        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+        <div class="my-3"><img src="{{ asset('storage/gallery/RS JIH.jpg') }}" class="img-fluid" alt="Gambar Rumah Sakit 1"></div>
+        <h4><a href="">JIH Hospital Yogyakarta</a></h4>
+        <p>A major hospital in Yogyakarta, JIH Hospital opens Specialist Poly services at any time, from morning at 08.00 WIB until night at 21.00 WIB. Specialists in Pediatrics, Obsgyn (Obstetrics and Gynecology), Internal Medicine, Neurology, Cardiology, ENT, Dentistry are always ready to help from morning to night without a break.</p>
         </div>
     </div>
 
-    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-5">
         <div class="icon-box">
-        <div class="icon"><i class="fas fa-pills"></i></div>
-        <h4><a href="">Hospital 1</a></h4>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+        <div class="my-3"><img src="{{ asset('storage/gallery/RS Oen.jpg') }}" class="img-fluid" alt="Gambar Rumah Sakit 1"></div>
+        <h4><a href="">Dr. Oen Hospital Surakarta</a></h4>
+        <p>The hospital, located in Solo, Central Java, ranks third as the best hospital in Indonesia and globally ranks 4,069th.</p>
         </div>
     </div>
 
-    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 mb-5">
         <div class="icon-box">
-        <div class="icon"><i class="fas fa-hospital-user"></i></div>
-        <h4><a href="">Hospital 1 </a></h4>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+        <div class="my-3"><img src="{{ asset('storage/gallery/RSUP dr.Kariadi.png') }}" class="img-fluid" alt="Gambar Rumah Sakit 1"></div>
+        <h4><a href="">RSUP dr.Kariadi Semarang</a></h4>
+        <p>Established on September 9, 1923, Dr. Kariadi Central General Hospital (RSUP) has become the most comprehensive and referral hospital in Central Java. 
+        As a class A hospital, RSUP Dr. Kariadi is also a place of education for doctors, specialists, and subspecialists from the UNDIP Faculty of Medicine and other educational institutions.</p>
+        </div>
+    </div>
+
+    <div class="section-title">
+    <h2>Tour Recommendations</h2>
+    <p>Your trusted source for unforgettable travel recommendations in your favorite destinations. We understand how precious your vacation time is and we are ready to help you plan the perfect travel experience.</p>
+    </div>
+
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="icon-box">
+        <div class="my-3"><img src="{{ asset('storage/gallery/6697d4fab4eac.jpg') }}" class="img-fluid" alt="Gambar Wisata 1"></div>
+        <h4><a href="">Candi Borobudur Magelang</a></h4>
+        <p>Borobudur was built in the Mandala style that reflects the universe in Buddhist belief. The structure is box-shaped with four entrances and a circular center point. 
+        When viewed from the outside to the inside, it is divided into two parts, namely the realm of the world which is divided into three zones on the outside, and the realm of Nirvana in the center.</p>
         </div>
     </div>
 
     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
         <div class="icon-box">
-        <div class="icon"><i class="fas fa-dna"></i></div>
-        <h4><a href="">Hospital 1</a></h4>
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+        <div class="my-3"><img src="{{ asset('storage/gallery/6697daf994c74.jpg') }}" class="img-fluid" alt="Gambar Wisata 1"></div>
+        <h4><a href="">Karimun Jawa <br>Jepara</a></h4>
+        <p>Karimun Jawa is an archipelago located in the northern Java Sea, about 80 kilometers from the north coast of Central Java, Indonesia. The archipelago consists of beautiful small islands with white sandy beaches, clear sea water, and underwater life rich in marine life diversity.</p>
         </div>
     </div>
 
     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
         <div class="icon-box">
-        <div class="icon"><i class="fas fa-wheelchair"></i></div>
-        <h4><a href="">Hospital 1</a></h4>
-        <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-        <div class="icon-box">
-        <div class="icon"><i class="fas fa-notes-medical"></i></div>
-        <h4><a href="">Hospital 1</a></h4>
-        <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+        <div class="my-3"><img src="{{ asset('storage/gallery/Dieng.jpeg') }}" class="img-fluid" alt="Gambar Wisata 1"></div>
+        <h4><a href="">Dieng <br>Wonosobo</a></h4>
+        <p>Dieng offers stunning natural scenery, including green hills, small lakes, and breathtaking panoramas. The cool weather and fresh air make it a great place for long walks or outdoor trekking.</p>
         </div>
     </div>
 

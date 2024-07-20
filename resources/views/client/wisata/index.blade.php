@@ -22,10 +22,10 @@
     <div class="container">
         <div class="row justify-content-center align-items-center" style="height: 400px;">
             <div class="col-12">
-                <h1 class="mb-4 text-4xl">Tempat Berlibur <span class="text-primary">Happycare</span></h1>
+                <h1 class="mb-4 text-4xl">HAPPYCARE <span class="text-primary">VACATION SPOT</span></h1>
                 <p class="mb-0">
-                    Indonesia memiliki banyak <span class="text-primary">Tempat untuk Berlibur</span>
-                    yang dapat dijadikan pilihan berlibur anda.
+                    Indonesia has many <span class="text-primary">places to vacation</span>
+                    that can be used as your vacation choice.
                 </p>
             </div>
         </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="blog-content border border-top-0 rounded-bottom p-4">
                         <div class="d-flex flex-column">
-                            <a href="#" class="h4 mb-3">{{ $item->name }}</a>
+                            <a href="{{ url('wisata/'.$item->name) }}" class="h4 mb-3">{{ $item->name }}</a>
                             @if ($item->kontak )
                                 <p> <i class="fa fa-calendar-alt text-primary me-2 mb-0"></i>{{ $item->kontak->address }} </p>
                                 <p> <i class="fa fa-calendar-alt text-primary me-2 mb-2"></i>{{ $item->kontak->phone }} </p> 
