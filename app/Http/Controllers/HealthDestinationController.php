@@ -33,6 +33,32 @@ class HealthDestinationController extends Controller
         return view('admin.healthDestination.create', compact('faskesKategori', 'bahasa'));
     }
 
+    private function validateAndStoreGalleryImages(Request $request, HealthDestination $healthDestination)
+    {
+        $request->validate(
+            [
+                'url.*' => 'nullable|image|max:1024|mimes:jpg,jpeg,png', // Allow null for existing images
+            ],
+            [
+                'url.*.required' => 'Setiap gambar wajib diisi',
+                'url.*.image' => 'File harus berupa gambar',
+                'url.*.max' => 'Ukuran gambar tidak boleh lebih dari 1MB',
+                'url.*.mimes' => 'Format gambar harus jpg, jpeg, atau png',
+            ]
+        );
+
+        if ($request->hasFile('url')) {
+            foreach ($request->file('url') as $file) {
+                $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('public/gallery', $fileName);
+
+                $healthDestination->galeri()->create([
+                    'url' => $fileName,
+                ]);
+            }
+        }
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -45,6 +71,7 @@ class HealthDestinationController extends Controller
         $destinasi->save();
 
         $destinasi->bahasa()->sync($request->bahasa_id);
+        $this->validateAndStoreGalleryImages($request, $destinasi);
 
         return redirect(url('admin/health-destination'))->with('success', 'Data Berhasil Ditambahkan');
     }
@@ -63,7 +90,7 @@ class HealthDestinationController extends Controller
      */
     public function edit(string $id)
     {
-        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan')->find($id);
+        $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'galeri')->find($id);
         $faskesKategori = FaskesKategori::get();
         $bahasa = Bahasa::orderBy('name', 'asc')->get()->pluck('name', 'id');
 
@@ -81,6 +108,7 @@ class HealthDestinationController extends Controller
         $destinasi->faskes_kategori_id = $request->faskes_kategori_id;
         $destinasi->update();
         $destinasi->bahasa()->sync($request->bahasa_id);
+        $this->validateAndStoreGalleryImages($request, $destinasi);
 
         return redirect(url('admin/health-destination'))->with('success-update', 'Berhasil update data');
     }

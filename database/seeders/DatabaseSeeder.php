@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
         // $this->call([
         //     FaskesKategoriSeeder::class,  // --> 2
         //     WisataKategoriSeeder::class,  // --> 2
+        //     CitySeeder::class,  // --> 2
         //     // ServiceSeeder::class,  // --> 2
         //     LanguageSeeder::class,  // --> 2
         //     AkunSeeder::class,  // --> 2

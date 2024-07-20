@@ -24,28 +24,28 @@ class AkunSeeder extends Seeder
                 'password'=>bcrypt('123456')
             ],
 
-            [
-                'username'=>'kesehatan',
-                'name'=>'Penyedia Layanan Kesehatan',
-                'email'=>'kesehatan@gmail.com',
-                'role'=>'pl_kesehatan',
-                'password'=>bcrypt('123456')
-            ],
+            // [
+            //     'username'=>'kesehatan',
+            //     'name'=>'Penyedia Layanan Kesehatan',
+            //     'email'=>'kesehatan@gmail.com',
+            //     'role'=>'pl_kesehatan',
+            //     'password'=>bcrypt('123456')
+            // ],
 
-            [
-                'username'=>'wisata',
-                'name'=>'Penyedia Layanan ',
-                'email'=>'wisata@gmail.com',
-                'role'=>'pl_wisata',
-                'password'=>bcrypt('123456')
-            ],
-            [
-                'username'=>'user',
-                'name'=>'AkunUser',
-                'email'=>'user@gmail.com',
-                'role'=>'user',
-                'password'=>bcrypt('123456')
-            ],
+            // [
+            //     'username'=>'wisata',
+            //     'name'=>'Penyedia Layanan ',
+            //     'email'=>'wisata@gmail.com',
+            //     'role'=>'pl_wisata',
+            //     'password'=>bcrypt('123456')
+            // ],
+            // [
+            //     'username'=>'user',
+            //     'name'=>'AkunUser',
+            //     'email'=>'user@gmail.com',
+            //     'role'=>'user',
+            //     'password'=>bcrypt('123456')
+            // ],
 
         ];
 

@@ -79,6 +79,20 @@
                                     </div>
                                 @endforeach
                             </div>
+                            <div class="col-md-8 form-group">
+                                {{-- Existing Gallery Images (Preview and Delete) --}}
+                                @foreach ($items->galeri as $gallery)
+                                    <div class="gallery-item">
+                                        <img src="{{ asset('storage/gallery/' . $gallery->url) }}" alt="Gallery Image" width="100"> 
+                                        <button type="button" class="delete-gallery-btn" data-gallery-id="{{ $gallery->id }}">Delete</button>
+                                    </div>
+                                @endforeach
+
+                                {{-- Input for New Images --}}
+                                <input type="file" name="url[]" id="url" class="form-control" multiple>
+                                <small class="text-muted">Supported formats: JPG, JPEG, PNG. Max size: 1MB per image.</small>
+                            </div>
+
                             <div class="col-sm-12 d-flex justify-content-end mt-4">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
                                 <button type="reset"

@@ -24,8 +24,8 @@ class ContactFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
             'city_id' => mt_rand(1, 10),
-            'tourist_destination_id' => mt_rand(1, 10), // Ambil 5 ID terakhir
-            // 'health_destination_id' => self::$healthDestinationIdCounter++, // Menggunakan counter dan increment
+            // 'tourist_destination_id' => mt_rand(1, 10), // Ambil 5 ID terakhir
+            'health_destination_id' => self::$healthDestinationIdCounter++, // Menggunakan counter dan increment
         ];
     }
 

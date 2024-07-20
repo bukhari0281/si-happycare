@@ -29,6 +29,8 @@ class GalleryController extends Controller
         return view('admin.gallery.create', compact('healthDestination', 'touristDestination'));
     }
 
+    
+
     /**
      * Store a newly created resource in storage.
      */
