@@ -14,7 +14,7 @@ aria-labelledby="deleteGaleriModalTitle" aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-          <form action="{{ route('galeri.destroy', $galleryItem->id) }}" method="POST">
+          <form action="{{ route('galeri.destroy', $item->id) }}" method="POST">
             @method('DELETE')
             @csrf
             <p>

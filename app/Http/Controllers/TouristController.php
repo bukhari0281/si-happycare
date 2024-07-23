@@ -33,6 +33,32 @@ class TouristController extends Controller
         return view('admin.touristDestination.create', compact('bahasas', 'wisataKategori'));
     }
 
+    private function validateAndStoreGalleryImages(Request $request, tourist_destination $tourist_destination)
+    {
+        $request->validate(
+            [
+                'url.*' => 'nullable|image|max:1024|mimes:jpg,jpeg,png', // Allow null for existing images
+            ],
+            [
+                'url.*.required' => 'Setiap gambar wajib diisi',
+                'url.*.image' => 'File harus berupa gambar',
+                'url.*.max' => 'Ukuran gambar tidak boleh lebih dari 1MB',
+                'url.*.mimes' => 'Format gambar harus jpg, jpeg, atau png',
+            ]
+        );
+
+        if ($request->hasFile('url')) {
+            foreach ($request->file('url') as $file) {
+                $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('public/gallery', $fileName);
+
+                $tourist_destination->galeri()->create([
+                    'url' => $fileName,
+                ]);
+            }
+        }
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -47,6 +73,7 @@ class TouristController extends Controller
 
         // Menyinkronkan bahasa_id dengan tabel pivot
         $destinasi->bahasa()->sync($request->bahasa_id);
+        $this->validateAndStoreGalleryImages($request, $destinasi);
 
         return redirect(url('admin/tourist-destination'))->with('success', 'Added!');
 

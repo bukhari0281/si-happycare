@@ -15,7 +15,14 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $items = Gallery::with('healthDestination', 'touristDestination')->get();
+        $items = Gallery::with([
+            'healthDestination' => function ($query) {
+                $query->select('id', 'name'); // Hanya ambil kolom yang diperlukan
+            },
+            'touristDestination' => function ($query) {
+                $query->select('id', 'name');
+            }
+        ])->get();
         $faskes = HealthDestination::with('galeri')->get();
         $tourist = tourist_destination::with('galeri')->get();
         return view('admin.gallery.index', compact('items', 'faskes', 'tourist'));
@@ -138,17 +145,21 @@ class GalleryController extends Controller
     }
 
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(Gallery $gallery)
     {
-        $gallery = Gallery::findOrFail($id);
+        // Hapus file gambar dari penyimpanan
+        Storage::delete('public/gallery/' . $gallery->url);
 
-        $gallery->galeri()->delete();
+        // Hapus data galeri dari database
+        $gallery->delete();
 
+        if($gallery){
+            //redirect dengan pesan sukses
+            return back()->with('success', 'Galeri berhasil dihapus');
+        }else{
+            //redirect dengan pesan error
+            return back()->with(['error' => 'Data Gagal Dihapus!']);
+        }
 
-        return back()->with('success', 'Berhasil menghapus data');
-        // return dd();
     }
 }

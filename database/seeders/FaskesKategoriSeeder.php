@@ -18,14 +18,6 @@ class FaskesKategoriSeeder extends Seeder
             'name' => 'Hospital',
         ]);
 
-        DB::table('faskes_kategoris')->insert([
-            'name' => 'Clinic',
-        ]);
-
-        DB::table('faskes_kategoris')->insert([
-            'name' => 'Medical specialist',
-        ]);
-
         $this->command->info('Faskes Kategori seeding successful.');
     }
 }

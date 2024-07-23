@@ -18,45 +18,13 @@
             </div>
         </div>
     </div>
-<div class="card">
 	<div class="card-header">
 		<a class="btn btn-outline-primary block float-end" href="{{ url('admin/galeri/create') }}">
 			Tambah Data
 		</a>
 	</div>
-    <div class="card-body">
-        <h3>Health Destination</h3>
-        <div class="row gallery" data-bs-toggle="modal" data-bs-target="#galleryModal">
-            @foreach ($items->where('health_destination_id', '!=', null) as $galleryItem)
-                <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2">
-                    <img class="w-100 active" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" alt="Gallery Image">
-                    <p>{{ $galleryItem->healthDestination->name ?? 'Tidak ada kategori' }}</p>
-                </div>
-                <div class="card rounded" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" alt="Card image cap">
-                    <div class="card-body bg-white">
-                      <h5 class="card-title mb-3">{{ $galleryItem->healthDestination->name ?? 'Tidak ada kategori' }}</h5>
-                      <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-
-    <div class="card-body">
-        <h3>Tourist Destination</h3>
-        <div class="row gallery" data-bs-toggle="modal" data-bs-target="#galleryModal">
-            @foreach ($items->where('tourist_destination_id', '!=', null) as $galleryItem)
-                <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2">
-                    <img class="w-100 active" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" alt="Gallery Image">
-                    <p>{{ $galleryItem->touristDestination->name ?? 'Tidak ada kategori' }}</p>
-                </div>
-            @endforeach
-        </div>
-    </div>
-
 </div>
-@foreach ($faskes as $healthDestination)
+{{-- @foreach ($faskes as $healthDestination)
     @if ($healthDestination->galeri->count() > 0)
         <div class="card">
             <div class="card-body">
@@ -89,6 +57,22 @@
                     @endforeach
                 </div>
             </div>
+        </div>
+    @endif
+@endforeach --}}
+
+@foreach ($items as $item)
+    @if ($item->healthDestination)
+        <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2">
+            <img src="{{ asset('storage/gallery/' . $item->url) }}" alt="{{ $item->healthDestination->nama }}">
+            <button data-bs-toggle="modal" data-bs-target="#deleteGaleriModal{{ $item->id }}" class="btn btn-danger block btn-sm">Hapus</button>
+            <button onclick="confirmDelete({{ $item->id }})" class="btn btn-danger block btn-sm">Hapus</button>
+
+        </div>
+    @elseif ($item->touristDestination)
+        <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2">
+            <img src="{{ asset('storage/gallery/' . $item->url) }}" alt="{{ $item->touristDestination->nama }}">
+            <button data-bs-toggle="modal" data-bs-target="#deleteGaleriModal{{ $item->id }}" class="btn btn-danger block btn-sm">Hapus</button>
         </div>
     @endif
 @endforeach

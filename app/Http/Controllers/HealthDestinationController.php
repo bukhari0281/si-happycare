@@ -71,7 +71,16 @@ class HealthDestinationController extends Controller
         $destinasi->save();
 
         $destinasi->bahasa()->sync($request->bahasa_id);
-        $this->validateAndStoreGalleryImages($request, $destinasi);
+        // $this->validateAndStoreGalleryImages($request, $destinasi);
+        if ($request->has('image')){
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+
+            $filename = time().'.'. $extention;
+
+            $path = 'uploads/helath_destination/';
+            $file->move('uploads/helath_destination/', $filename);
+        }
 
         return redirect(url('admin/health-destination'))->with('success', 'Data Berhasil Ditambahkan');
     }
