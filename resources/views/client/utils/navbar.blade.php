@@ -12,7 +12,7 @@
         <ul>
           <li><a class="nav-link scrollto" href="{{ url('') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ url('about-us') }}">About</a></li>
-          <li><a class="nav-link scrollto" href="{{ url('faskes') }}">Facility</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('faskes') }}">Hospital</a></li>
           <li><a class="nav-link scrollto" href="{{ url('wisata') }}">Tour</a></li>
           <!-- <li><a class="nav-link scrollto" href="{{ url('contact-us') }}">Contact Us</a></li> -->
           {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>

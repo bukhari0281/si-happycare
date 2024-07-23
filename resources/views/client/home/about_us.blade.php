@@ -73,7 +73,7 @@
     <div class="container">
         <div class="section-title">
         <h2>Kelompok 7 <strong>Let Me Think</strong></h2>
-        <p>Dibalik suksesnya <a class="text-primary text-bold" href="{{ url('/') }}">Happycare</a></p>
+        <p>behind the success of <a class="text-primary text-bold" href="{{ url('/') }}">Happycare</a></p>
         </div>
 
         <div class="row">
