@@ -79,11 +79,14 @@
                                     </div>
                                 @endforeach
                             </div>
+                            <div class="col-md-4">
+                                <label for="url">Gambar (Upload Multiple)</label>
+                            </div>
                             <div class="col-md-8 form-group">
                                 {{-- Existing Gallery Images (Preview and Delete) --}}
                                 @foreach ($items->galeri as $gallery)
                                     <div class="gallery-item">
-                                        <img src="{{ asset('storage/gallery/' . $gallery->url) }}" alt="Gallery Image" width="100"> 
+                                        <img src="{{ asset('storage/gallery/' . $gallery->url) }}" alt="Gallery Image" width="100">
                                         <button type="button" class="delete-gallery-btn" data-gallery-id="{{ $gallery->id }}">Delete</button>
                                     </div>
                                 @endforeach

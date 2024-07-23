@@ -22,14 +22,14 @@
          <div class="card-header">
              <!-- <h4 class="card-title">Horizontal Form</h4> -->
              @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
          </div>
          <div class="card-content">
              <div class="card-body">
@@ -67,7 +67,7 @@
                                             {{ $item->name }}
                                         </option>
                                     @endforeach
-                                </select>   
+                                </select>
                              </div>
                              <div class="col-md-4">
                                 <label for="bahasa_id">Bahasa yang digunakan</label>

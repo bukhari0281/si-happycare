@@ -27,10 +27,17 @@
     <div class="card-body">
         <h3>Health Destination</h3>
         <div class="row gallery" data-bs-toggle="modal" data-bs-target="#galleryModal">
-            @foreach ($items->where('health_destination_id', '!=', null) as $galleryItem) 
+            @foreach ($items->where('health_destination_id', '!=', null) as $galleryItem)
                 <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2">
                     <img class="w-100 active" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" alt="Gallery Image">
-                    <p>{{ $galleryItem->healthDestination->name ?? 'Tidak ada kategori' }}</p> 
+                    <p>{{ $galleryItem->healthDestination->name ?? 'Tidak ada kategori' }}</p>
+                </div>
+                <div class="card rounded" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" alt="Card image cap">
+                    <div class="card-body bg-white">
+                      <h5 class="card-title mb-3">{{ $galleryItem->healthDestination->name ?? 'Tidak ada kategori' }}</h5>
+                      <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -49,4 +56,41 @@
     </div>
 
 </div>
+@foreach ($faskes as $healthDestination)
+    @if ($healthDestination->galeri->count() > 0)
+        <div class="card">
+            <div class="card-body">
+                <h3>{{ $healthDestination->name ?? 'Tidak ada kategori' }}</h3>
+
+                <div class="row gallery" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                    @foreach ($healthDestination->galeri as $galleryItem)
+                        <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2">
+                            <img class="w-100 active mb-2" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" alt="Gallery Image">
+                            <button data-bs-toggle="modal" data-bs-target="#deleteGaleriModal{{ $galleryItem->id }}" class="btn btn-danger block btn-sm">Hapus</button>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endif
+@endforeach
+@foreach ($tourist as $touristDestination)
+    @if ($touristDestination->galeri->count() > 0)
+        <div class="card">
+            <div class="card-body">
+                <h3>{{ $touristDestination->name ?? 'Tidak ada kategori' }}</h3>
+
+                <div class="row gallery" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                    @foreach ($touristDestination->galeri as $galleryItem)
+                        <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2">
+                            <img class="w-100 active mb-2" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" alt="Gallery Image">
+                            <button data-bs-toggle="modal" data-bs-target="#deleteGaleriModal{{ $galleryItem->id }}" class="btn btn-danger block btn-sm">Hapus</button>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endif
+@endforeach
+@include('admin.gallery.delete')
 @endsection

@@ -16,7 +16,9 @@ class GalleryController extends Controller
     public function index()
     {
         $items = Gallery::with('healthDestination', 'touristDestination')->get();
-        return view('admin.gallery.index', compact('items'));
+        $faskes = HealthDestination::with('galeri')->get();
+        $tourist = tourist_destination::with('galeri')->get();
+        return view('admin.gallery.index', compact('items', 'faskes', 'tourist'));
     }
 
     /**
@@ -29,7 +31,7 @@ class GalleryController extends Controller
         return view('admin.gallery.create', compact('healthDestination', 'touristDestination'));
     }
 
-    
+
 
     /**
      * Store a newly created resource in storage.
@@ -82,33 +84,71 @@ class GalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Gallery $gallery)
     {
-        //
+        $healthDestination = HealthDestination::get();
+        $touristDestination = tourist_destination::get();
+
+        // Retrieve the current gallery images
+        $galleryImages = Gallery::where('health_destination_id', $gallery->health_destination_id)
+                                ->orWhere('tourist_destination_id', $gallery->tourist_destination_id)
+                                ->get();
+
+        return view('admin.gallery.edit', compact('gallery', 'galleryImages', 'healthDestination', 'touristDestination'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Gallery $gallery)
     {
-        //
+        $request->validate([
+            'url.*' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
+        ], [
+            'url.*.image' => 'File harus berupa gambar',
+            'url.*.max' => 'Ukuran gambar tidak boleh lebih dari 1MB',
+            'url.*.mimes' => 'Format gambar harus jpg, jpeg, atau png',
+        ]);
+
+        // Handle new image uploads
+        if ($request->hasFile('url')) {
+            foreach ($request->file('url') as $file) {
+                $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('public/gallery', $fileName);
+
+                Gallery::create([
+                    'url' => $fileName,
+                    'health_destination_id' => $gallery->health_destination_id,
+                    'tourist_destination_id' => $gallery->tourist_destination_id,
+                ]);
+            }
+        }
+
+        // Handle image deletions
+        if ($request->has('delete_images')) {
+            foreach ($request->input('delete_images') as $imageId) {
+                $image = Gallery::find($imageId);
+                Storage::delete('public/gallery/' . $image->url);
+                $image->delete();
+            }
+        }
+
+        // Redirect back with success message (adjust URL as needed)
+        return redirect(url('admin/galeri'))->with('success', 'Berhasil memperbarui data');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        $gallery = Gallery::findOrFail($id);
+        $gallery = HealthDestination::findOrFail($id);
 
-        // Delete the image file from storage before deleting the record (optional)
-        if (Storage::disk('public')->exists('gallery/' . $gallery->url)) {
-            Storage::disk('public')->delete('gallery/' . $gallery->url);
-        }
+        $gallery->galeri()->delete();
 
-        $gallery->delete();
 
         return back()->with('success', 'Berhasil menghapus data');
+        // return dd();
     }
 }
