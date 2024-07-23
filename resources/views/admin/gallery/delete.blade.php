@@ -1,4 +1,4 @@
-@foreach ($faskes as $item)
+@foreach ($items as $item)
 <!-- Vertically Centered modal Modal -->
 <div class="modal fade" id="deleteGaleriModal{{ $item->id }}" tabindex="-1" role="dialog"
 aria-labelledby="deleteGaleriModalTitle" aria-hidden="true">
@@ -18,7 +18,7 @@ aria-labelledby="deleteGaleriModalTitle" aria-hidden="true">
             @method('DELETE')
             @csrf
             <p>
-                Apakah Anda yakin ingin menghapus data <strong>{{ $item->galeri->id }}</strong>?
+                Apakah Anda yakin ingin menghapus data <strong>{{ $item->url }}</strong>?
             </p>
             <button type="button" class="btn btn-light-secondary"
                 data-bs-dismiss="modal">

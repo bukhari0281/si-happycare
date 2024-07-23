@@ -143,7 +143,7 @@ class GalleryController extends Controller
      */
     public function destroy(string $id)
     {
-        $gallery = HealthDestination::findOrFail($id);
+        $gallery = Gallery::findOrFail($id);
 
         $gallery->galeri()->delete();
 
