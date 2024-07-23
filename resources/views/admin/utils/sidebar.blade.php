@@ -50,59 +50,6 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
-                <!-- <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-person-circle"></i>
-                        <span>Account</span>
-                    </a>
-
-                    <ul class="submenu ">
-                        <li class="submenu-item  ">
-                            <a href="account-profile.html" class="submenu-link">Profile</a>
-                        </li>
-
-                        <li class="submenu-item  ">
-                            <a href="account-security.html" class="submenu-link">Security</a>
-                        </li>
-                    </ul>
-
-
-                </li> -->
-
-                <!-- <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-person-badge-fill"></i>
-                        <span>Authentication</span>
-                    </a>
-
-                    <ul class="submenu ">
-                        <li class="submenu-item  ">
-                            <a href="auth-login.html" class="submenu-link">Login</a>
-                        </li>
-                        <li class="submenu-item  ">
-                            <a href="auth-register.html" class="submenu-link">Register</a>
-                        </li>
-                        <li class="submenu-item  ">
-                            <a href="auth-forgot-password.html" class="submenu-link">Forgot Password</a>
-                        </li>
-                    </ul>
-
-
-                </li>
-
-                <li class="sidebar-title">VALIDASI RESERVASI</li> -->
-
-                <!-- <li
-                    class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-journal-check"></i>
-                        <span>Reservasi</span>
-                    </a>
-                </li> -->
-
-                <!-- <li class="sidebar-title">DATA DESTINASI</li> -->
-
                 <li class="sidebar-item  has-sub">
                     <a href="{{ url('admin/form-utama') }}" class='sidebar-link'>
                         <i class="bi bi-emoji-tear-fill"></i>
@@ -136,7 +83,7 @@
 
                     </ul>
                 </li>
-
+{{--
                 <li class="sidebar-item has-sub ">
                     <a href="form-layout.html" class='sidebar-link'>
                         <i class="bi bi-images"></i>
@@ -150,7 +97,7 @@
                             <a href="{{ url('admin/galeri/create') }}" class="submenu-link">Tambah</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="sidebar-item has-sub ">
                     <a href="form-layout.html" class='sidebar-link'>

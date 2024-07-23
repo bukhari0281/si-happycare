@@ -37,10 +37,7 @@
                                     <th>No.</th>
                                     <th>Nama Tempat</th>
                                     <th>Deskripsi</th>
-                                    <th>Kategori Faskes</th>
-                                    <th>Bahasa yang digunakan</th>
-                                    {{-- <th>Bahasa yang digunakan</th>
-                                    <th>Layanan yang disediakan</th> --}}
+                                    <th>Gambar</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -52,8 +49,10 @@
                                     <td>{{ $i }}</td>
                                     <td>{{ $alt->name }}</td>
                                     <td class="mb-0 text-truncate" style="max-width: 200px;">{{ $alt->description }}</td>
-                                    <td>{{ $alt->faskesKategori->name }}</td>
-                                    <td>{{ implode(', ', $alt->bahasa->pluck('name')->toArray()) }}</td>
+                                    <td>
+                                        <a href="{{ url('admin/health-destination/'.$alt->id.'/image') }}" class="btn btn-primary block btn-sm">Tambah Gambar / lihat gambar</a>
+                                    </td>
+                                    {{-- <td>{{ implode(', ', $alt->bahasa->pluck('name')->toArray()) }}</td> --}}
                                     <td>
                                           <a href="{{ url("admin/health-destination/$alt->id") }}" class="btn btn-primary block btn-sm">Detail</a>
                                           <a href="{{ url("admin/health-destination/$alt->id/edit") }}" class="btn btn-secondary block btn-sm">Edit</a>

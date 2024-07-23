@@ -21,7 +21,7 @@ class HealthDestinationFactory extends Factory
         return [
             'name' => $this->faker->word(mt_rand(1, 6)),
             'description' => $this->faker->paragraph(mt_rand(5, 8)),
-            'faskes_kategori_id' => mt_rand(1, 3),
+            'faskes_kategori_id' => 1,
             // 'bahasa_id' => mt_rand(1, 6),
         ];
     }

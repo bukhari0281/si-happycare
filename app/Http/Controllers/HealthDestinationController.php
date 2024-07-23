@@ -67,20 +67,13 @@ class HealthDestinationController extends Controller
         $destinasi = new HealthDestination;
         $destinasi->name = $request->name;
         $destinasi->description = $request->description;
+        $this->validateAndStoreGalleryImages($request, $destinasi);
         $destinasi->faskes_kategori_id = $request->faskes_kategori_id;
         $destinasi->save();
 
+
         $destinasi->bahasa()->sync($request->bahasa_id);
-        // $this->validateAndStoreGalleryImages($request, $destinasi);
-        if ($request->has('image')){
-            $file = $request->file('image');
-            $extention = $file->getClientOriginalExtension();
 
-            $filename = time().'.'. $extention;
-
-            $path = 'uploads/helath_destination/';
-            $file->move('uploads/helath_destination/', $filename);
-        }
 
         return redirect(url('admin/health-destination'))->with('success', 'Data Berhasil Ditambahkan');
     }
@@ -100,6 +93,7 @@ class HealthDestinationController extends Controller
     public function edit(string $id)
     {
         $items = HealthDestination::with('faskesKategori', 'bahasa', 'Layanan', 'galeri')->find($id);
+        $items->image = explode($items->image, ' '); // Assuming space is the separator
         $faskesKategori = FaskesKategori::get();
         $bahasa = Bahasa::orderBy('name', 'asc')->get()->pluck('name', 'id');
 

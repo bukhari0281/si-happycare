@@ -7,10 +7,13 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\gambar_controller;
+use App\Http\Controllers\GambarController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HealthDestination;
 use App\Http\Controllers\HealthDestinationController;
+use App\Http\Controllers\ImageTouristController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\TouristController;
@@ -57,6 +60,15 @@ Route::middleware(['auth'])->group(function () {
             Route::get('jenis/wisata', [CategoryController::class, 'index_jenis_wisata']); // JENIS WISATA
             Route::get('jenis/faskes', [CategoryController::class, 'index_jenis_faskes']); // JENIS FASKES
             Route::get('logout', [AuthController::class,'logout'])->name('logout');
+
+            // Gambar health-destination
+            Route::get('/health-destination/{id}/image', [GambarController::class, 'index'])->name('gambar.index');
+            Route::post('/health-destination/{id}/image', [GambarController::class, 'store'])->name('gambar.store');
+            Route::get('/image/{id}/delete', [GambarController::class, 'destroy'])->name('gambar.destroy');
+            // Gambar tourist-destination
+            Route::get('/tourist-destination/{id}/image', [ImageTouristController::class, 'index']);
+            Route::post('/tourist-destination/{id}/image', [ImageTouristController::class, 'store']);
+            Route::get('/image/{id}/delete', [ImageTouristController::class, 'destroy']);
         });
 
         // Route untuk 'jenis/wisata' dan 'jenis/faskes'
@@ -89,6 +101,8 @@ Route::middleware(['auth'])->group(function () {
             Route::resource('/fasilitas', FasilitasController::class); // FASILITAS
             Route::get('/jenis/wisata', [CategoryController::class, 'index_jenis_wisata']); // JENIS WISATA
             Route::get('/jenis/faskes', [CategoryController::class, 'index_jenis_faskes']); // JENIS FASKES
+
+
         });
         Route::get('logout', [AuthController::class,'logout'])->name('logout');
 

@@ -26,24 +26,15 @@
                     <h4>Galeri</h4>
                     </div>
                     <div class="card-body">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="./assets/compiled/jpg/banana.jpg" class="d-block w-100" alt="...">
+                        <div class="row gallery" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                            @foreach ($items->galeri as $galleryItem)
+                            <div class="col-6 col-sm-6 col-lg-3 m-2">
+                                <a href="#">
+                                    <img class="w-100 active" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" data-bs-target="#Gallerycarousel" data-bs-slide-to="0">
+                                </a>
+                            </div>
+                            @endforeach
                         </div>
-                        <div class="carousel-item">
-                            <img src="./assets/compiled/jpg/bg-mountain.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                        </a>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -63,8 +54,8 @@
                     </ul>
                     <h4>Kontak</h4>
                     <ul>
-                        @if ($items->kontak) 
-                                
+                        @if ($items->kontak)
+
                                 <li> {{ $items->kontak->email }} </li>
                                 <li> {{ $items->kontak->city->name }} </li>
                                 <li> {{ $items->kontak->address }} </li>

@@ -36,8 +36,9 @@
                                     <th>No.</th>
                                     <th>Nama</th>
                                     <th>Deskripsi</th>
-                                    <th>Jenis Wisata</th>
-                                    <th>Bahasa yang digunakan</th>
+                                    {{-- <th>Jenis Wisata</th> --}}
+                                    <th>Gambar</th>
+                                    {{-- <th>Bahasa yang digunakan</th> --}}
                                     {{-- <th>Bahasa yang digunakan</th>
                                     <th>Layanan yang disediakan</th> --}}
                                     <th>Aksi</th>
@@ -51,8 +52,10 @@
                                     <td>{{ $i }}</td>
                                     <td>{{ $alt->name }}</td>
                                     <td class="mb-0 text-truncate" style="max-width: 200px;">{{ $alt->description }}</td>
-                                    <td>{{ $alt->wisataKategori->name }}</td>
-                                    <td>{{ implode(', ', $alt->bahasa->pluck('name')->toArray()) }}</td>
+                                    <td>
+                                        <a href="{{ url('admin/tourist-destination/'.$alt->id.'/image') }}" class="btn btn-primary block btn-sm">Tambah Gambar / lihat gambar</a>
+                                    </td>
+                                    {{-- <td>{{ implode(', ', $alt->bahasa->pluck('name')->toArray()) }}</td> --}}
                                     <td>
                                           <a href="{{ url("admin/tourist-destination/$alt->id") }}" class="btn btn-primary block btn-sm">Detail</a>
                                           <a href="{{ url("admin/tourist-destination/$alt->id/edit") }}" class="btn btn-secondary block btn-sm">Edit</a>

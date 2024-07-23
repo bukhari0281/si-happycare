@@ -33,14 +33,15 @@ class DatabaseSeeder extends Seeder
         // Dijalankan Sesuai dengan urutan
 
         // City::factory(100)->create(); // --> 1
-        $this->call([
-            FaskesKategoriSeeder::class,  // --> 2
-            WisataKategoriSeeder::class,  // --> 2
-            CitySeeder::class,  // --> 2
-            // ServiceSeeder::class,  // --> 2
-            LanguageSeeder::class,  // --> 2
-            AkunSeeder::class,  // --> 2
-        ]);
+        // $this->call([
+        //     FaskesKategoriSeeder::class,  // --> 2
+        //     WisataKategoriSeeder::class,  // --> 2
+        //     CitySeeder::class,  // --> 2
+        //     // ServiceSeeder::class,  // --> 2
+        //     LanguageSeeder::class,  // --> 2
+        //     AkunSeeder::class,  // --> 2
+        // ]);
+
 
         // HealthDestination::factory(10)->create(); // --> 3
         // tourist_destination::factory(10)->create(); // --> 3

@@ -26,30 +26,9 @@
                     <h4>Galeri</h4>
                     </div>
                     <div class="card-body">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                @foreach ($items->galeri as $galleryItem)
-                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                        <img src="{{ asset('storage/gallery/'.$galleryItem->url) }}" class="d-block w-100" alt="...">
-                                    </div>
-                                @endforeach
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
                         <div class="row gallery" data-bs-toggle="modal" data-bs-target="#galleryModal">
                             @foreach ($items->galeri as $galleryItem)
-                            <div class="col-6 col-sm-6 col-lg-3 mt-2 mt-md-0 mb-md-0 mb-2">
+                            <div class="col-6 col-sm-6 col-lg-3  m-2">
                                 <a href="#">
                                     <img class="w-100 active" src="{{ asset('storage/gallery/'.$galleryItem->url) }}" data-bs-target="#Gallerycarousel" data-bs-slide-to="0">
                                 </a>
@@ -80,8 +59,8 @@
                     </ul>
                     <h4>Kontak</h4>
                     <ul>
-                        @if ($items->kontak) 
-                                
+                        @if ($items->kontak)
+
                                 <li> {{ $items->kontak->email }} </li>
                                 <li> {{ $items->kontak->city->name }} </li>
                                 <li> {{ $items->kontak->address }} </li>

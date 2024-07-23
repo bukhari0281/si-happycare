@@ -24,7 +24,6 @@ class HealthDestinasionRequest extends FormRequest
         return [
             'name' => 'required',
             'description' => 'required',
-            'image' => 'nullable|mimes:png,jpg,jpeg,,gif,webp',
             'faskes_kategori_id' => 'required',
             'bahasa_id' => 'required|array|min:1',
         ];
