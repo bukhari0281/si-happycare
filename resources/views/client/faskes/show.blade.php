@@ -46,11 +46,11 @@
 
 <div class="container mb-5">
     <div class="card-body">
-        <h4>Deskripsi</h4>
+        <h4>Description</h4>
         <p>{{ $data->description }}</p>
-        <h4>Kategori Faskes</h4>
+        <h4>Facility Category</h4>
         <p>{{ $data->faskesKategori->name }}</p>
-        <h4>Layanan yang disediakan</h4>
+        <h4>Services Provided</h4>
         <ul>
             @foreach($data->Layanan as $service)
                 <li>{{ $service->name }}</li>
@@ -63,7 +63,7 @@
             @endforeach
         </ul>
         <h4>Contact</h4>
-        <ul class="my-5">
+        <ul>
             @if ($data->kontak)
                 <li> {{ $data->kontak->email }} </li>
                 <li> {{ $data->kontak->city->name }} </li>
@@ -71,7 +71,43 @@
                 <li> {{ $data->kontak->phone }} </li>
             @endif
         </ul>
+       
     </div>
+    
 </div>
+<section id="services" class="services">
+<div class="container">
+<div class="section-title">
+    <h2>Tour Recommendations</h2>
+    <p>Your trusted source for unforgettable travel recommendations in your favorite destinations. We understand how precious your vacation time is and we are ready to help you plan the perfect travel experience.</p>
+    </div>
+    <div class="row">
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-5">
+    <div class="icon-box">
+        <div class="my-3"><img src="{{ asset('storage/gallery/6697d4fab4eac.jpg') }}" class="img-fluid" alt="Gambar Wisata 1"></div>
+        <h4><a href="">Candi Borobudur Magelang</a></h4>
+        <p>Borobudur was built in the Mandala style that reflects the universe in Buddhist belief. The structure is box-shaped with four entrances and a circular center point. 
+        When viewed from the outside to the inside, it is divided into two parts, namely the realm of the world which is divided into three zones on the outside, and the realm of Nirvana in the center.</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 mb-5">
+    <div class="icon-box">
+        <div class="my-3"><img src="{{ asset('storage/gallery/6697daf994c74.jpg') }}" class="img-fluid" alt="Gambar Wisata 1"></div>
+        <h4><a href="">Karimun Jawa <br>Jepara</a></h4>
+        <p>Karimun Jawa is an archipelago located in the northern Java Sea, about 80 kilometers from the north coast of Central Java, Indonesia. The archipelago consists of beautiful small islands with white sandy beaches, clear sea water, and underwater life rich in marine life diversity.</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 mb-5">
+    <div class="icon-box">
+        <div class="my-3"><img src="{{ asset('storage/gallery/Dieng.jpeg') }}" class="img-fluid" alt="Gambar Wisata 1"></div>
+        <h4><a href="">Dieng <br>Wonosobo</a></h4>
+        <p>Dieng offers stunning natural scenery, including green hills, small lakes, and breathtaking panoramas. The cool weather and fresh air make it a great place for long walks or outdoor trekking.</p>
+        </div>
+    </div>
+
+</div>
+</section>
 
 @endsection

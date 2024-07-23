@@ -5,16 +5,16 @@
         margin-top: 0;
         background-color: #e7f3ff;
         height: 100vh;
-        background-image: url("storage/gallery/bg_home.jpeg");
+        background-image: url("storage/gallery/bg_home.webp");
         /* background-repeat: no-repeat; */
         /* background-attachment: fixed; */
         background-position: center;
-        background-size: 100%;
-    }
+        background-size: 100%;       
+}
 </style>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center" >
-    <div class="container text-end">
+     <div class="container text-end">
       <h1 class="text-primary  text-end">Welcome To HappyCare</h1>
       <h2 class=" text-end">Website of Health Tourism Facilities Provider in Central Java Region</h2>
       <form action="{{ url('faskes/search') }}" class=" text-end" method="POST">
@@ -22,7 +22,7 @@
         <div class="form-body">
             <div class="row">
                 <div class="col-12  text-end">
-                    <input type="text" class="form-control  text-end" name="keyword" placeholder="Search Hospital or Services">
+                    <input type="text" class="form-control  text-start" name="keyword" placeholder="Search Hospital or Services">
                 </div>
                 <div class="col-md-12 form-group">
                     <button type="submit" id="button-search" class="btn btn-get-started scrollto">Search Now</button>

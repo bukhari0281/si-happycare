@@ -15,7 +15,7 @@
             Kec. Gamping, Kabupaten Sleman, Daerah
             Istimewa Yogyakarta 55292<br><br>
               <strong>Phone: </strong><a href="https://wa.me/6282211592439" target="blank">+6282211592439</a><br>
-              <strong>Email: </strong><a href="mailto:walkercfarhan@gmail.com">walkercfarhan@gmail.com</a><br>
+              <strong>Email: </strong><a href="mailto:walkercfarhan@gmail.com">adminhappycare@gmail.com</a><br>
             </p>
           </div>
 
@@ -24,7 +24,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('') }}">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('about-us') }}">About</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('faskes') }}">Facility</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('faskes') }}">Hospital</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ url('wisata') }}">Tour</a></li>
               <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li> -->
             </ul>
